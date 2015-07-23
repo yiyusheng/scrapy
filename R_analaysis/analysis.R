@@ -7,7 +7,8 @@ dir_data <- 'D:/Data/scrapy'
 # 1. ¶ÁÈ¡Êı¾İ
 date <- '0723'
 cat <- c('lenovo','tp','wh')
-name <- paste(date,cat,sep = '')
+suffix <- ''
+name <- paste(date,cat,suffix,sep = '')
 
 data <- fromJSON(file = file.path(dir_data,paste(name[1],'.json',sep='')))
 data <- data.frame(matrix(unlist(data),nrow = length(data),byrow = T))
@@ -40,4 +41,5 @@ data <- subset(data,id %in% sta_id$id[sta_id$count <= 2])
 
 # 5. ´æ´¢
 data <- data[order(data$price,decreasing = T),]
-write.table(data,file = file.path(dir_data,paste(date,'.csv',sep='')),sep=',',row.names = F)
+write.table(data,file = file.path(dir_data,paste(date,suffix,'.csv',sep='')),sep=',',row.names = F)
+save(data,file = file.path(dir_data,paste(date,suffix,'.Rda',sep='')))
