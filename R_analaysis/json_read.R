@@ -1,15 +1,16 @@
 # 读取json数据
 scrapy_read <- function(dir_data,name){
   # 1. 文件读取
-  data <- fromJSON(file = file.path(dir_data,paste(name,'.json',sep='')))
+  data <- fromJSON(file = file.path(dir_data,'json',paste(name,'.json',sep='')))
   data <- data.frame(matrix(unlist(data),nrow = length(data),byrow = T))
   data$class <- name
     
   # 2. 数据预处理
   names(data) <- c('city','id','title','url','price','comment_count',
                    'img_url','time','favorite_count','desc','class')
-  col_order <- c('title','price','desc','url','time','comment_count',
-                 'favorite_count','id','city','img_url')
+  data$good_id <- as.character(gsub('h(.*)=','',data$url))
+  col_order <- c('title','price','desc','url','good_id','time','comment_count',
+                 'favorite_count','id','city','img_url','class')
   row.names(data) <- NULL
   data <- data[,col_order]
   

@@ -6,10 +6,10 @@ dir_data <- 'D:/Data/scrapy'
 source(file.path(dir_code,'json_read.R'))
 
 # 1. 读取数据
-date <- '0724'
+date <- '0723'
 # cat <- c('lenovo','tp','wh')
 cat <- 'lenovo'
-suffix <- 1:10
+suffix <- ''
 name <- paste(date,cat,suffix,sep = '')
 
 data_list <- list()
@@ -24,22 +24,18 @@ for (i in 1:length(name)){
 }
 
 # 2. 存储
-data <- data[!duplicated(data$url),]
+data <- data[!duplicated(data$good_id),]
 data <- data[order(data$price,decreasing = T),]
 write.table(data,file = file.path(dir_data,paste(date,'.csv',sep='')),sep=',',row.names = F)
 save(data,file = file.path(dir_data,paste(date,'.Rda',sep='')))
-# 
-# # 2. 分析
-# intermatrix <- matrix(0,nrow = length(data),ncol = length(data))
-# for (i in length(name):1){
-#   for (j in 1:length(name)){
-#     intermatrix[i,j] <- length(intersect(data[[i]]$url,data[[j]]$url))/nrow(data[[i]])
-#   }
-#   if (i == length(name)){
-#     inter <- data[[i]]$url
-#   }else  if (i >= 2){
-#     inter <- intersect(data[[i]]$url,inter)
-#     print(length(inter))
-#   }
-# }
-# 
+
+# 3. 读取
+load(file = file.path(dir_data,'0723.Rda'))
+d1 <- data
+load(file.path(dir_data,'0724.Rda'))
+d2 <- data
+data <- rbind(d1,d2)
+data <- data[!duplicated(data$good_id),]
+data <- data[order(data$good_id),]
+write.table(data,file = file.path(dir_data,'all.csv'),sep=',',row.names = F)
+
