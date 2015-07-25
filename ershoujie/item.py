@@ -2,6 +2,7 @@ import scrapy
 
 class goodItem(scrapy.Item):
 #good info
+    good_id = scrapy.Field()
     title = scrapy.Field()
     price = scrapy.Field()
     url = scrapy.Field()
@@ -10,6 +11,7 @@ class goodItem(scrapy.Item):
     image_url =  scrapy.Field()
     comment_count =  scrapy.Field()
     favorite_count =  scrapy.Field()
+    cls = scrapy.Field()
     
 #seller info
     wangwang =  scrapy.Field()
