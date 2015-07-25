@@ -11,7 +11,16 @@ class ErshouSpider(scrapy.Spider):
     allowed_domains = ["http://s.2.taobao.com/"]
 
 # generate urls
-    ori_urls = 'http://s.2.taobao.com/list/list.htm?catid=50100423&st_edtime=1&page='
+   # ori_urls = 'http://s.2.taobao.com/list/list.htm?catid=50100423&st_edtime=1&page='
+
+# Thinkpad
+#    ori_urls = 'http://s.2.taobao.com/list/list.htm?catid=50100423&st_edtime=1&ppath=20000%3A21642&page='
+
+# Lenovo
+    ori_urls = 'http://s.2.taobao.com/list/list.htm?catid=50100423&st_edtime=1&start=1600&end=3000&ppath=20000%3A11119&page='
+
+# Wuhan
+#    ori_urls = 'http://s.2.taobao.com/list/list.htm?catid=50100423&divisionId=420100&st_edtime=1&page='
     start_urls = [ori_urls + `i` for i in range(1,101)]
 
 # parse
@@ -54,7 +63,7 @@ class ErshouSpider(scrapy.Spider):
                 item['time'] = datenow - delta
             else:
                 item['time'] = datetime.strptime(time[i],'%Y.%m.%d')
-            item['image_url'] = image_url[i] 
+            item['image_url'] = 'http:' + image_url[i] 
             item['comment_count'] = comment_count[i] 
             item['favorite_count'] = favorite_count[i] 
             item['wangwang'] = wangwang[i] 
