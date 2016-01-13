@@ -13,7 +13,7 @@ class ErshouSpider(scrapy.Spider):
 # parameter
     name = "deyi"
     allowed_domains = ["http://m.deyi.com/"]
-    start_urls = [urls + `i` for i in range(1,2)]
+    start_urls = [urls + `i` for i in range(1,15000)]
 
 # parse
     def parse(self, response):	
@@ -31,7 +31,6 @@ class ErshouSpider(scrapy.Spider):
         comments = response.xpath('//*[@class="name"]/span/text()').extract()
 		
 		# fill info into item
-        f = open('deyi.txt','w')
         for i in range(len(title)):
             item['title'] = title[i]
             item['url'] = url[i]
@@ -53,8 +52,5 @@ class ErshouSpider(scrapy.Spider):
             else:
                 item['time'] = time
             item['comments'] = comments[i]
-            tmp = [item['title'],item['id'],item['time'],item['comments']]
-            f.write(tmp)
             yield item
-        f.close()
 		
