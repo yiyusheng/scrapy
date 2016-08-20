@@ -1,11 +1,11 @@
-# 数据分析
+# 鏁版嵁鍒嗘瀽
 rm(list = ls())
 require('rjson')
 dir_code <- 'D:/Git/scrapy/R_analaysis'
 dir_data <- 'D:/Data/scrapy'
 source(file.path(dir_code,'json_read.R'))
 
-# 1. 读取数据
+# 1. 璇诲彇鏁版嵁
 date <- '0723'
 # cat <- c('lenovo','tp','wh')
 cat <- 'lenovo'
@@ -23,13 +23,13 @@ for (i in 1:length(name)){
   
 }
 
-# 2. 存储
+# 2. 瀛樺偍
 data <- data[!duplicated(data$good_id),]
 data <- data[order(data$price,decreasing = T),]
 write.table(data,file = file.path(dir_data,paste(date,'.csv',sep='')),sep=',',row.names = F)
 save(data,file = file.path(dir_data,paste(date,'.Rda',sep='')))
 
-# 3. 读取
+# 3. 璇诲彇
 load(file = file.path(dir_data,'0723.Rda'))
 d1 <- data
 load(file.path(dir_data,'0724.Rda'))

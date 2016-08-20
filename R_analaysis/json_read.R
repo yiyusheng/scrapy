@@ -1,11 +1,11 @@
-# ¶ÁÈ¡jsonÊı¾İ
+# è¯»å–jsonæ•°æ®
 scrapy_read <- function(dir_data,name){
-  # 1. ÎÄ¼ş¶ÁÈ¡
+  # 1. æ–‡ä»¶è¯»å–
   data <- fromJSON(file = file.path(dir_data,'json',paste(name,'.json',sep='')))
   data <- data.frame(matrix(unlist(data),nrow = length(data),byrow = T))
   data$class <- name
     
-  # 2. Êı¾İÔ¤´¦Àí
+  # 2. æ•°æ®é¢„å¤„ç†
   names(data) <- c('city','id','title','url','price','comment_count',
                    'img_url','time','favorite_count','desc','class')
   data$good_id <- as.character(gsub('h(.*)=','',data$url))
@@ -14,20 +14,20 @@ scrapy_read <- function(dir_data,name){
   row.names(data) <- NULL
   data <- data[,col_order]
   
-  # 3. ¼Û¸ñ,ÆÀÂÛÊı,ÊÕ²ØÊıÊı×Ö»¯
+  # 3. ä»·æ ¼,è¯„è®ºæ•°,æ”¶è—æ•°æ•°å­—åŒ–
   data$price <- as.numeric(levels(data$price)[data$price])
   data$favorite_count <- as.numeric(levels(data$favorite_count)[data$favorite_count])
   data$comment_count <- as.numeric(levels(data$comment_count)[data$comment_count])
   
-  # 4. É¾³ıÂôÁ½Ì¨»òÁ½Ì¨ÒÔÉÏ»úÆ÷µÄÈË
+  # 4. åˆ é™¤å–ä¸¤å°æˆ–ä¸¤å°ä»¥ä¸Šæœºå™¨çš„äºº
   sta_id <- table(data$id)
   sta_id <- data.frame(id = names(sta_id),count = as.numeric(sta_id))
   # data <- subset(data,id %in% sta_id$id[sta_id$count <= 1])
   
-  # 5. É¾³ıÖØ¸´Á´½Ó
+  # 5. åˆ é™¤é‡å¤é“¾æ¥
   data <- data[!duplicated(data$url),]
   data <- data[order(data$price,decreasing = T),]
 
-  # 6. ·µ»ØÖµ
+  # 6. è¿”å›å€¼
   return(data)
 }
