@@ -27,6 +27,6 @@ class ErshoujieMySQLPipeline(object):
         self.ms.selectDB(DB)
 
     def process_item(self, item, spider):
-        sqlstr = '''INSERT IGNORE INTO %s (good_id,title,price,descr,time,id,city,comment_count,favorite_count,url,img_url,class) VALUES ("%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s")''' %(Table,item['good_id'],item['title'],item['price'],item['desc'],item['time'],item['wangwang'],item['city'],item['comment_count'],item['favorite_count'],item['url'],item['image_url'],item['cls'])
+        sqlstr = '''INSERT IGNORE INTO %s (good_id,title,price,descr,time,id,city,comment_count,favorite_count,url,img_url,class,update_time) VALUES ("%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s")''' %(Table,item['good_id'],item['title'],item['price'],item['desc'],item['time'],item['wangwang'],item['city'],item['comment_count'],item['favorite_count'],item['url'],item['image_url'],item['cls'],item['update_time'])
         r = self.ms.executeDB(sqlstr)
         return item

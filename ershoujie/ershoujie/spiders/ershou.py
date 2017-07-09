@@ -18,8 +18,9 @@ from item import goodItem
 #cls = Wuhan
 
 # Lenovo
-ori_urls = 'http://s.2.taobao.com/list/list.htm?catid=50100423&st_edtime=1&start=1600&end=3000&ppath=20000%3A11119&page='
+ori_urls = 'http://s.2.taobao.com/list/list.htm?catid=50100423&start=1500&end=4000&ppath=20000%3A11119&page='
 cls = 'Lenovo'   
+ut = datetime.now()
 
 class ErshouSpider(scrapy.Spider):
 # parameter
@@ -46,13 +47,17 @@ class ErshouSpider(scrapy.Spider):
         favorite_count = response.xpath('//*[@class="item-count"]/a[@class="item-favorites"]/em/text()').extract()
         wangwang = response.xpath('//*[@class="seller-nick"]/span/@data-nick').extract()
         city = response.xpath('//*[@class="seller-location"]/text()').extract()
+        len_desc = len(description)
 
 # fill info into item
         for i in range(len(title_url)):
             item['title'] = title_url.xpath('//h4/a/text()').extract()[i]
             item['url'] = 'http:' + title_url.xpath('//h4/a/@href').extract()[i]
             item['price'] = price[i]
-            item['desc'] = description[i]
+            if (i >= len_desc):
+                item['desc'] = 'NoDesc'
+            else:
+                item['desc'] = description[i]
             if time_minute in time[i]:
                 tmp = time[i].replace(time_minute,'')
                 delta = timedelta(minutes = int(tmp))
@@ -74,4 +79,5 @@ class ErshouSpider(scrapy.Spider):
             item['city'] = city[i] 
             item['cls'] = cls
             item['good_id'] = re.sub('h(.*)=','',item['url'])
+            item['update_time'] = ut
             yield item

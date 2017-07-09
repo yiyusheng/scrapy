@@ -16,3 +16,4 @@ class goodItem(scrapy.Item):
 #seller info
     wangwang =  scrapy.Field()
     city =  scrapy.Field()
+    update_time = scrapy.Field()
