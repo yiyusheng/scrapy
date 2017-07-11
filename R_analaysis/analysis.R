@@ -1,9 +1,7 @@
 # 数据分析
-rm(list = ls())
+rm(list = ls());setwd('/home/yiyusheng/Code/Python/scrapy/R_analaysis/');source('~/rhead')
 require('rjson')
-dir_code <- 'D:/Git/scrapy/R_analaysis'
-dir_data <- 'D:/Data/scrapy'
-source(file.path(dir_code,'json_read.R'))
+source('json_read.R')
 
 # 1. 读取数据
 date <- '0723'

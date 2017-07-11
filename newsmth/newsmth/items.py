@@ -8,24 +8,15 @@
 import scrapy
 
 
-class DeyiMobiItem(scrapy.Item):
+class NewsmthItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     title = scrapy.Field()
+#    price = scrapy.Field()
     uname = scrapy.Field()
     time = scrapy.Field()
-    difftime = scrapy.Field()	
     reply_count = scrapy.Field()	
-    detail = scrapy.Field()	
+#    view_count = scrapy.Field()
+#    location = scrapy.Field()
     url = scrapy.Field()
-
-class DeyiWebItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    title = scrapy.Field()
-    uname = scrapy.Field()
-    time = scrapy.Field()
     create_time = scrapy.Field()	
-    reply_count = scrapy.Field()	
-    view_count = scrapy.Field()	
-    url = scrapy.Field()

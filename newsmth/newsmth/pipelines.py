@@ -4,11 +4,13 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
+
+
 from scrapy import signals
 from scrapy.exporters import CsvItemExporter
 import time
 
-class deyiPipeline(object):
+class NewsmthPipeline(object):
     def __init__(self):
         self.files = {}
         
