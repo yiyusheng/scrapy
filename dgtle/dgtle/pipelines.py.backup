@@ -4,13 +4,13 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
+
+
 from scrapy import signals
 from scrapy.exporters import CsvItemExporter
 import time
-import pymysql
 
-#%% save as CSV files
-class deyiPipeCSVline(object):
+class DgtleWebPipeline(object):
     def __init__(self):
         self.files = {}
         
@@ -38,31 +38,3 @@ class deyiPipeCSVline(object):
     
     def get_media_requests(self, item, info):
         info.spider.name
-        
-#%% save in MySQL
-def dbHandle():
-    conn = pymysql.connect(
-        host = "localhost",
-        user = "root",
-        passwd = "qwer1234",
-        charset = "utf8",
-        use_unicode = True
-    )
-    return conn
-    
-class deyiWebMySQLPipeline(object):
-    def process_item(self,item,spider):
-        dbObject = dbHandle()
-        cursor = dbObject.cursor()
-        cursor.execute("USE scrapy")
-        cursor.execute("set names 'utf8';")
-        cursor.execute("set character set utf8;")
-        sql = "INSERT INTO secondHand(title,uname,time,reply_count,create_time,webname,url,ext1) VALUES(%s,%s,%s,%s,%s,%s,%s,%s)"
-        try:
-            cursor.execute(sql,(item['title'],item['uname'],item['time'],item['reply_count'],item['create_time'],spider.name,item['url'],
-                                item['view_count']))
-            cursor.connection.commit()
-        except BaseException as e:
-            print("?????>>>>>>>>>>>>>",e,"<<<<<<<<<<<<<?????")
-            dbObject.rollback()
-        return item

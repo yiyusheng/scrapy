@@ -25,7 +25,7 @@ class DgtleWebSpider(CrawlSpider):
            item['reply_count'] = it.xpath('p[2]/span[3]/text()').extract()
            item['title'] = it.xpath('div[2]/p[1]/@title').extract()
            item['location'] = it.xpath('p[1]/font-size/span/text()').extract()
-           item['url'] = it.xpath('div[2]/p[1]/a/@href').extract() 
+           item['url'] = it.xpath('div[2]/p[1]/a/@href').extract()
            item['view_count'] = it.xpath('p[2]/span[2]/text()').extract()
            item['price'] = it.xpath('p[1]/font-size/text()').extract()
            yield item
