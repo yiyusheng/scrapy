@@ -20,7 +20,7 @@ class DgtleWebSpider(CrawlSpider):
         for it in rx:
            item = DgtleWebItem()
            item['uname'] = it.xpath('div[2]/p[2]/text()').extract()
-           item['create_time'] = datetime.datetime.now()
+           item['create_time'] = datetime.datetime.utcnow()
            item['time'] = it.xpath('p[2]/span[1]/text()').extract()
            item['reply_count'] = it.xpath('p[2]/span[3]/text()').extract()
            item['title'] = it.xpath('div[2]/p[1]/@title').extract()

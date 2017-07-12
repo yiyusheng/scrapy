@@ -20,7 +20,7 @@ class DeyiwebSpider(CrawlSpider):
         for it in rx:
            item = DeyiWebItem()
            item['uname'] = it.xpath('tr/td[2]/cite/a/text()').extract()
-           item['create_time'] = datetime.datetime.now()
+           item['create_time'] = datetime.datetime.utcnow()
            item['time'] = it.xpath('tr/td[2]/em/text()').extract()
            item['reply_count'] = it.xpath('tr/td[3]/a/text()').extract()
            item['view_count'] = it.xpath('tr/td[3]/em/text()').extract()
