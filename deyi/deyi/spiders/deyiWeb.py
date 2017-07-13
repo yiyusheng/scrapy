@@ -25,5 +25,6 @@ class DeyiwebSpider(CrawlSpider):
            item['reply_count'] = it.xpath('tr/td[3]/a/text()').extract()
            item['view_count'] = it.xpath('tr/td[3]/em/text()').extract()
            item['title'] = it.xpath('tr/th/a[1]/text()').extract()
-           item['url'] = it.xpath('@id').extract()    
+           #item['url'] = it.xpath('@id').extract()    
+           item['url'] = it.xpath('@id').extract()[0].replace('normalthread_','http://www.deyi.com/forum-viewthread-tid-')+'.html'
            yield item
