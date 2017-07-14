@@ -17,21 +17,17 @@ class DgtleWebSpider(CrawlSpider):
             yield scrapy.Request(url=url, callback=self.parse)
     
     def parse(self,response):
-        url_prefix = "http://bbs.dgtle.com/"
+        url_prefix = "http://bbs.dgtle.com"
         rx = response.xpath("//div[contains(@class,'tradebox')]")
         for it in rx:
            item = DgtleWebItem()
            item['uname'] = it.xpath('div[2]/p[2]/text()').extract()
            item['create_time'] = datetime.datetime.utcnow()
            item['time'] = it.xpath('p[2]/span[1]/text()').extract()
-           #item['reply_count'] = it.xpath('p[2]/span[3]/text()').extract()
            item['reply_count'] = re.findall(r'\d+',it.xpath('p[2]/span[3]/text()').extract()[0])[0]
            item['title'] = it.xpath('div[2]/p[1]/@title').extract()
            item['location'] = it.xpath('p[1]/font-size/span/text()').extract()
-           #item['url'] = it.xpath('div[2]/p[1]/a/@href').extract()
            item['url'] = url_prefix+it.xpath('div[2]/p[1]/a/@href').extract()[0]
-           #item['view_count'] = it.xpath('p[2]/span[2]/text()').extract()
            item['view_count'] = re.findall(r'\d+',it.xpath('p[2]/span[2]/text()').extract()[0])[0]
-           #item['price'] = it.xpath('p[1]/font-size/text()').extract()
            item['price'] = re.findall(r'\d+',it.xpath('p[1]/font-size/text()').extract()[0])[0]
            yield item
