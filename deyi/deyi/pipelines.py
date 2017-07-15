@@ -7,6 +7,7 @@
 from scrapy import signals
 from scrapy.exporters import CsvItemExporter
 import time
+import datetime
 import pymysql
 
 #%% save as CSV files
@@ -59,10 +60,11 @@ class deyiWebMySQLPipeline(object):
         cursor.execute("set character set utf8;")
         sql = "INSERT INTO secondHand(title,uname,time,reply_count,create_time,webname,url,ext1) VALUES(%s,%s,%s,%s,%s,%s,%s,%s)"
         try:
-            cursor.execute(sql,(item['title'],item['uname'],item['time'],item['reply_count'],item['create_time'],spider.name,item['url'],
-                                item['view_count']))
+            cursor.execute(sql,(item['title'],item['uname'],item['time'],item['reply_count'],item['create_time'],spider.name,item['url'],item['view_count']))
             cursor.connection.commit()
+        except pymysql.IntegrityError:
+            pass
         except BaseException as e:
-            print("?????>>>>>>>>>>>>>",e,"<<<<<<<<<<<<<?????")
+            print("["+datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")+"]",e)
             dbObject.rollback()
         return item
