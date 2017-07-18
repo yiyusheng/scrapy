@@ -7,10 +7,8 @@
 
 
 from scrapy import signals
-from scrapy.exporters import CsvItemExporter
-import time
-import pymysql
 import datetime
+import pymysql
 
 #%% save in MySQL
 def dbHandle():
@@ -23,14 +21,14 @@ def dbHandle():
     )
     return conn
     
-class newsmthWebMySQLPipeline(object):
+class v2exWebMySQLPipeline(object):
     def process_item(self,item,spider):
         dbObject = dbHandle()
         cursor = dbObject.cursor()
         cursor.execute("USE scrapy")
         cursor.execute("set names 'utf8';")
         cursor.execute("set character set utf8;")
-        sql = "INSERT IGNORE INTO secondHand(title,uname,time,reply_count,create_time,webname,url) VALUES(%s,%s,%s,%s,%s,%s,%s)"
+        sql = "INSERT INTO secondHand(title,uname,time,reply_count,create_time,webname,url) VALUES(%s,%s,%s,%s,%s,%s,%s)"
         try:
             cursor.execute(sql,(item['title'],item['uname'],item['time'],item['reply_count'],item['create_time'],spider.name,item['url']))
             cursor.connection.commit()
