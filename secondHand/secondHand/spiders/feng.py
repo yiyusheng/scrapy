@@ -16,6 +16,7 @@ class FengSpider(CrawlSpider):
     
     def parse(self,response):
         rx = response.xpath("//tbody[contains(@id,'normalthread')]")
+        utcTime = datetime.utcnow().replace(microsecond=0)
         for it in rx:
            item = SecondhandItem()
            
@@ -32,13 +33,13 @@ class FengSpider(CrawlSpider):
            elif u'昨天' in timeB:
                finalTime = timeA + ' ' + timeB.replace(u'昨天','') + ':00'
            elif u'半小时前' in timeB:
-               finalTime = datetime.utcnow().replace(microsecond=0) - timedelta(seconds=1800) + timedelta(hours=8)
+               finalTime = utcTime - timedelta(seconds=1800) + timedelta(hours=8)
            elif u'小时前' in timeB:
-               finalTime = datetime.utcnow().replace(microsecond=0) - timedelta(hours=int(timeB.replace(u'小时前',''))) + timedelta(hours=8)
+               finalTime = utcTime - timedelta(hours=int(timeB.replace(u'小时前',''))) + timedelta(hours=8)
            elif u'分钟前' in timeB:
-               finalTime = datetime.utcnow().replace(microsecond=0) - timedelta(minutes=int(timeB.replace(u'分钟前',''))) + timedelta(hours=8)
+               finalTime = utcTime - timedelta(minutes=int(timeB.replace(u'分钟前',''))) + timedelta(hours=8)
            elif u'秒前' in timeB:
-               finalTime = datetime.utcnow().replace(microsecond=0) - timedelta(seconds=int(timeB.replace(u'秒前',''))) + timedelta(hours=8)
+               finalTime = utcTime - timedelta(seconds=int(timeB.replace(u'秒前',''))) + timedelta(hours=8)
            
            
            finalTime = str(finalTime)
@@ -46,7 +47,7 @@ class FengSpider(CrawlSpider):
            item['uname'] = it.xpath('tr/td[2]/cite/a/text()').extract()
            item['time'] = finalTime
            item['reply_count'] = it.xpath('tr/td[3]/a/text()').extract()
-           item['create_time'] = datetime.utcnow().replace(second=0,microsecond=0)
+           item['create_time'] = utcTime.replace(second=0)
            item['webname'] = self.name
            item['url'] = it.xpath('@id').extract()[0].replace('normalthread_','http://bbs.feng.com/read-htm-tid-')+'.html'
            
