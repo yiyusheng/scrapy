@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from datetime import datetime,timedelta
-from secondHand.items import SecondhandItem
 from scrapy.spiders import CrawlSpider
+from secondHand.items import SecondhandItem
 
 class FengSpider(CrawlSpider):
     name = 'fengWeb'

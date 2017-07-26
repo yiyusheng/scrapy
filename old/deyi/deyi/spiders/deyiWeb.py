@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import scrapy
-import datetime
+from datetime import datetime,timedelta
 from scrapy.spiders import CrawlSpider
 from deyi.items import DeyiWebItem
 
@@ -16,11 +16,12 @@ class DeyiwebSpider(CrawlSpider):
     
     def parse(self,response):
         rx = response.xpath("//tbody[contains(@id,'normalthread')]")
+        utcTime = datetime.utcnow().replace(second=0,microsecond=0)
         for it in rx:
            item = DeyiWebItem()
            item['uname'] = it.xpath('tr/td[2]/cite/a/text()').extract()
-           item['create_time'] = datetime.datetime.utcnow().replace(second=0,microsecond=0)
-           item['time'] = it.xpath('tr/td[2]/em/text()').extract()
+           item['create_time'] = utcTime
+           item['time'] = utcTime + timedelta(hours=8)
            item['reply_count'] = it.xpath('tr/td[3]/a/text()').extract()
            item['view_count'] = it.xpath('tr/td[3]/em/text()').extract()
            item['title'] = it.xpath('tr/th/a[1]/text()').extract()

@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
-import datetime
-from scrapy.linkextractors import LinkExtractor
-from scrapy.spiders import CrawlSpider, Rule
+from datetime import datetime,timedelta
+from scrapy.spiders import CrawlSpider
 from newsmth.items import NewsmthItem
 
 
@@ -17,14 +16,25 @@ class NewsmthwebSCSpider(CrawlSpider):
     
     def parse(self,response):
         rx = response.xpath("//*[@id='body']/div[3]/table/tbody/tr[not(@class)]")
+        utcTime = datetime.utcnow().replace(second=0,microsecond=0)
+
         for it in rx:
+           rawTime = it.xpath('td[3]/text()').extract()[0]
+           if u'-' in rawTime:
+               finalTime = rawTime + ' 00:00:00'
+           elif int(rawTime[0:2]) >= 8:
+               finalTime = utcTime.strftime('%Y-%m-%d ') + str(rawTime.replace(u'\u2003',''))
+           else:
+               finalTime = (utcTime + timedelta(days=1)).strftime('%Y-%m-%d ') + str(rawTime.replace(u'\u2003',''))
+
+            
            item = NewsmthItem()
            item['uname'] = it.xpath('td[4]/a/text()').extract()
-           item['time'] = it.xpath('td[3]/text()').extract()
+           item['time'] = finalTime
            item['reply_count'] = it.xpath('td[7]/text()').extract()
            item['title'] = it.xpath('td[2]/a/text()').extract()
            item['url'] = 'http://www.newsmth.net'+it.xpath('td[2]/a/@href').extract()[0]
-           item['create_time'] = datetime.datetime.utcnow().replace(second=0,microsecond=0)
+           item['create_time'] = utcTime
            yield item
            
 class NewsmthwebSDSpider(CrawlSpider):
@@ -38,13 +48,23 @@ class NewsmthwebSDSpider(CrawlSpider):
     
     def parse(self,response):
         rx = response.xpath("//*[@id='body']/div[3]/table/tbody/tr[not(@class)]")
+        utcTime = datetime.utcnow().replace(second=0,microsecond=0)
+
         for it in rx:
+           rawTime = it.xpath('td[3]/text()').extract()[0]
+           if u'-' in rawTime:
+               finalTime = rawTime + ' 00:00:00'
+           elif int(rawTime[0:2]) >= 8:
+               finalTime = utcTime.strftime('%Y-%m-%d ') + str(rawTime.replace(u'\u2003',''))
+           else:
+               finalTime = (utcTime + timedelta(days=1)).strftime('%Y-%m-%d ') + str(rawTime.replace(u'\u2003',''))
+            
            item = NewsmthItem()
            item['uname'] = it.xpath('td[4]/a/text()').extract()
-           item['time'] = it.xpath('td[3]/text()').extract()
+           item['time'] = finalTime
            item['reply_count'] = it.xpath('td[7]/text()').extract()
            item['title'] = it.xpath('td[2]/a/text()').extract()
            item['url'] = 'http://www.newsmth.net'+it.xpath('td[2]/a/@href').extract()[0]
-           item['create_time'] = datetime.datetime.utcnow().replace(second=0,microsecond=0)
+           item['create_time'] = utcTime
            yield item
            

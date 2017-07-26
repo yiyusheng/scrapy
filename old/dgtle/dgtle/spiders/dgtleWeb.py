@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 import scrapy
-import datetime
 import re
-from scrapy.linkextractors import LinkExtractor
-from scrapy.spiders import CrawlSpider, Rule
+from scrapy.spiders import CrawlSpider
 from dgtle.items import DgtleWebItem
+from datetime import datetime,timedelta
 
 
 class DgtleWebSpider(CrawlSpider):
@@ -19,11 +18,12 @@ class DgtleWebSpider(CrawlSpider):
     def parse(self,response):
         url_prefix = "http://bbs.dgtle.com"
         rx = response.xpath("//div[contains(@class,'tradebox')]")
+        utcTime = datetime.utcnow().replace(second=0,microsecond=0)
         for it in rx:
            item = DgtleWebItem()
            item['uname'] = it.xpath('div[2]/p[2]/text()').extract()
-           item['create_time'] = datetime.datetime.utcnow().replace(second=0,microsecond=0)
-           item['time'] = it.xpath('p[2]/span[1]/text()').extract()
+           item['create_time'] = utcTime
+           item['time'] = utcTime + timedelta(hours=8)
            item['reply_count'] = re.findall(r'\d+',it.xpath('p[2]/span[3]/text()').extract()[0])[0]
            item['title'] = it.xpath('div[2]/p[1]/@title').extract()
            item['location'] = it.xpath('p[1]/font-size/span/text()').extract()
