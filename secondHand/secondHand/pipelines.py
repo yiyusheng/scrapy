@@ -36,6 +36,7 @@ class SecondhandPipeline(object):
         except pymysql.IntegrityError:
             pass
         except BaseException as e:
-            print("["+datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")+"]",e)
+            print("["+datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")+"]",e,item['title'],item['uname'],item['time'],item['reply_count'],item['create_time'],spider.name,item['url'],
+                                item['view_count'],item['price'],item['location'],item['ext4'],item['ext5'])
             dbObject.rollback()
         return item
