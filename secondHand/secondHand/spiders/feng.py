@@ -9,8 +9,8 @@ class FengSpider(CrawlSpider):
     allowed_domains = ['bbs.feng.com']
 
     def start_requests(self):
-#        urls = ['http://bbs.feng.com/forum.php?mod=forumdisplay&fid=29&orderby=lastpost&filter=lastpost&orderby=lastpost&page=' + str(i) for i in range(1,3)]
-        urls = ['http://bbs.feng.com/thread-htm-fid-29-page-' + str(i) + '.html' for i in range(1,101)]
+        urls = ['http://bbs.feng.com/forum.php?mod=forumdisplay&fid=29&orderby=dateline&filter=author&orderby=dateline&page=' + str(i) for i in range(1,3)]
+#        urls = ['http://bbs.feng.com/thread-htm-fid-29-page-' + str(i) + '.html' for i in range(1,101)]
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
     
