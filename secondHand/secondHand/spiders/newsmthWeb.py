@@ -16,16 +16,18 @@ class NewsmthwebSCSpider(CrawlSpider):
     def parse(self,response):
         rx = response.xpath("//*[@id='body']/div[3]/table/tbody/tr[not(@class)]")
         utcTime = datetime.utcnow().replace(second=0,microsecond=0)
-
+        e8Time = utcTime + timedelta(hours=8)
         for it in rx:
            rawTime = it.xpath('td[3]/text()').extract()[0]
+           
            if u'-' in rawTime:
                finalTime = rawTime + ' 00:00:00'
-           elif int(rawTime[0:2]) >= 8:
-               finalTime = utcTime.strftime('%Y-%m-%d ') + str(rawTime.replace(u'\u2003',''))
            else:
-               finalTime = (utcTime + timedelta(days=1)).strftime('%Y-%m-%d ') + str(rawTime.replace(u'\u2003',''))
-            
+               finalTime = e8Time.strftime('%Y-%m-%d ') + str(rawTime.replace(u'\u2003',''))
+           
+           if datetime.strptime(finalTime,'%Y-%m-%d %H:%M:%S') > e8Time:
+               finalTime = e8Time
+           
            item = SecondhandItem()
            item['title'] = it.xpath('td[2]/a/text()').extract()
            item['uname'] = it.xpath('td[4]/a/text()').extract()
@@ -54,15 +56,17 @@ class NewsmthwebSDSpider(CrawlSpider):
     def parse(self,response):
         rx = response.xpath("//*[@id='body']/div[3]/table/tbody/tr[not(@class)]")
         utcTime = datetime.utcnow().replace(second=0,microsecond=0)
-
+        e8Time = utcTime + timedelta(hours=8)
         for it in rx:
            rawTime = it.xpath('td[3]/text()').extract()[0]
+           
            if u'-' in rawTime:
                finalTime = rawTime + ' 00:00:00'
-           elif int(rawTime[0:2]) >= 8:
-               finalTime = utcTime.strftime('%Y-%m-%d ') + str(rawTime.replace(u'\u2003',''))
            else:
-               finalTime = (utcTime + timedelta(days=1)).strftime('%Y-%m-%d ') + str(rawTime.replace(u'\u2003',''))
+               finalTime = e8Time.strftime('%Y-%m-%d ') + str(rawTime.replace(u'\u2003',''))
+           
+           if datetime.strptime(finalTime,'%Y-%m-%d %H:%M:%S') > e8Time:
+               finalTime = e8Time
             
            item = SecondhandItem()
            item['title'] = it.xpath('td[2]/a/text()').extract()

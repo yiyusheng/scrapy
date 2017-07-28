@@ -17,17 +17,20 @@ class SmzdmSpider(CrawlSpider):
     def parse(self,response):
         rx = response.xpath("//li[contains(@class,'second_li')]")
         utcTime = datetime.utcnow().replace(second=0,microsecond=0)
+        e8Time = utcTime + timedelta(hours=8)
         for it in rx:
            rawTime = it.xpath('div[3]/text()').extract()[0]
+           
            if rawTime.count('-') == 1:
                finalTime = '2017-'+rawTime + ':00'
            elif rawTime.count('-') == 2:
                finalTime = rawTime + ':00'
-           elif int(rawTime[0:2]) >= 8:
-               finalTime = utcTime.strftime('%Y-%m-%d ') + str(rawTime)
            else:
-               finalTime = (utcTime + timedelta(days=1)).strftime('%Y-%m-%d ') + str(rawTime)
+               finalTime = e8Time.strftime('%Y-%m-%d ') + str(rawTime) + ':00'
            
+           if datetime.strptime(finalTime,'%Y-%m-%d %H:%M:%S') > e8Time:
+               finalTime = e8Time
+            
            item = SecondhandItem()
            item['title'] = it.xpath('div[9]/a/text()').extract()
            item['uname'] = it.xpath('div[2]/a/text()').extract()
