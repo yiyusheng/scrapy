@@ -1,2 +1,0 @@
-# MySQL commend
-create table ershoujie(good_id varchar(16) not null, title varchar(512) not null, price int(11) not null, descr varchar(1024) not null, time datetime  not null default '1970/01/01', update_time datetime  not null default '1970/01/01', id varchar(32) not null, city varchar(16), comment_count int(11),favorite_count int(11), url varchar(512) not null, img_url varchar(512), class varchar(128) default 'NOCLASS', primary key(good_id), key(id),key(price))  CHARACTER SET 'utf8' COLLATE 'utf8_general_ci';
