@@ -23,6 +23,7 @@ class SecondhandPipeline(object):
     numDone = 0
     numDup = 0
     numError = 0
+    refresh_webname=['smzdm']
     
     def process_item(self,item,spider):
         warnings.filterwarnings('error', category=pymysql.Warning)
@@ -31,20 +32,28 @@ class SecondhandPipeline(object):
         cursor.execute("USE scrapy")
         cursor.execute("set names 'utf8';")
         cursor.execute("set character set utf8;")
-        sql = "INSERT IGNORE INTO secondHand(title,uname,time,reply_count,create_time,webname,url,ext1,ext2,ext3,ext4,ext5) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
         try:
+            sql = "INSERT IGNORE INTO secondHand(title,uname,time,reply_count,create_time,webname,url,ext1,ext2,ext3,ext4,ext5,update_time) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
             cursor.execute(sql,(item['title'],item['uname'],item['time'],item['reply_count'],item['create_time'],spider.name,item['url'],
-                                item['view_count'],item['price'],item['location'],item['ext4'],item['ext5']))
+                                item['view_count'],item['price'],item['location'],item['ext4'],item['ext5'],item['time']))
             cursor.connection.commit()
             self.numDone += 1
+
         except BaseException as e:
             if u'Duplicate entry' in str(e):
+                if item['webname'] in self.refresh_webname:
+                    sql = 'SELECT update_time from secondHand where url=%s and title=%s'
+                    cursor.execute(sql,(item['url'],item['title']))
+                    uptime_insql = cursor.fetchall()[0][0].strftime('%Y-%m-%d %H:%M:%S')
+                    if uptime_insql!=item['time']:
+                        #print uptime_insql,item['time'],uptime_insql==item['time']
+                        sql = "UPDATE secondHand set update_time=%s,update_count=update_count+1 where url=%s and title=%s"
+                        cursor.execute(sql,(item['time'],item['url'],item['title']))
+                        cursor.connection.commit()
                 self.numDup += 1
             else:
                 print("["+datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")+"]",e)
                 self.numError += 1
-#            print("["+datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")+"]",e,item['title'],item['uname'],item['time'],item['reply_count'],item['create_time'],spider.name,item['url'],
-#                                item['view_count'],item['price'],item['location'],item['ext4'],item['ext5'])
             dbObject.rollback()
         return item
     def get_statistic(self,spider):
