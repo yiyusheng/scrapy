@@ -62,8 +62,8 @@ def advertiser_extract():
 def update_ad_for_secondhand():
     try:
         cursor.execute('UPDATE secondHand SET advertiser=0 WHERE advertiser=1')
-        sql = "UPDATE secondHand sh JOIN (SELECT * FROM advertiser WHERE update_time=%s) ad ON ad.uname=sh.uname and ad.webname=sh.webname SET sh.advertiser=1"
-        cursor.execute(sql,cur_time.strftime('%Y-%m-%d %H:%M:%S'))
+        sql = "UPDATE secondHand sh JOIN (SELECT * FROM advertiser WHERE update_time>%s) ad ON ad.uname=sh.uname and ad.webname=sh.webname SET sh.advertiser=1"
+        cursor.execute(sql,utctime_3daysago.strftime('%Y-%m-%d %H:%M:%S'))
     except BaseException as e:
         print("["+datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")+"]",e) 
 
@@ -76,6 +76,7 @@ cursor.execute("USE scrapy")
 cursor.execute("set names 'utf8';")
 cursor.execute("set character set utf8;")
 cur_time = datetime.utcnow() + timedelta(hours=8)
+utctime_3daysago = datetime.utcnow() +timedelta(days=-3)
 time_7daysago = cur_time + timedelta(days=-7)
 time_30daysago = cur_time + timedelta(days=-30)
 advertiser_extract()
