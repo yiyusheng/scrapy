@@ -10,7 +10,7 @@ class SmzdmSpider(CrawlSpider):
     allowed_domains = ['2.smzdm.com']
 
     def start_requests(self):
-        urls = ['https://2.smzdm.com/p' + str(i) for i in range(1,100)]
+        urls = ['https://2.smzdm.com/p' + str(i) + '/' for i in range(1,100)]
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
     
