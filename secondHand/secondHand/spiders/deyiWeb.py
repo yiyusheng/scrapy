@@ -17,11 +17,22 @@ class DeyiwebSpider(CrawlSpider):
     def parse(self,response):
         rx = response.xpath("//tbody[contains(@id,'normalthread')]")
         utcTime = datetime.utcnow().replace(second=0,microsecond=0)
+        e8Time = utcTime + timedelta(hours=8)
+
+        
         for it in rx:
+           replyTime = it.xpath('tr/td[4]/em/a/text()').extract()[0]
+           replyCount = it.xpath('tr/td[3]/a/text()').extract()
+           if len(replyCount)==0:
+               continue
+           else:
+               replyCount=replyCount[0]
+           finalTime = int(replyCount)==0 and replyTime+':00' or e8Time
+           
            item = SecondhandItem()
            item['title'] = it.xpath('tr/th/a[1]/text()').extract()
            item['uname'] = it.xpath('tr/td[2]/cite/a/text()').extract()
-           item['time'] = utcTime + timedelta(hours=8)
+           item['time'] = finalTime
            item['reply_count'] = it.xpath('tr/td[3]/a/text()').extract()
            item['create_time'] = utcTime
            item['webname'] = self.name
@@ -32,3 +43,4 @@ class DeyiwebSpider(CrawlSpider):
            item['ext4'] = ''
            item['ext5'] = ''
            yield item
+#//*[@id="normalthread_11040653"]/tr/td[4]/em/a
