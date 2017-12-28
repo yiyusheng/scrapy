@@ -21,7 +21,7 @@ class NgaSpider(CrawlSpider):
         utcTime = datetime.utcnow().replace(second=0,microsecond=0)
         for it in rx:
            item = SecondhandItem()
-           item['title'] = it.xpath('td[2]/a/text()').extract()
+           item['title'] = re.sub('\[.*\]','',it.xpath('td[2]/a/text()').extract()[0])
            item['uname'] = it.xpath('td[3]/a/@title').extract()
            item['time'] = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(int(it.xpath('td[3]/span/text()').extract()[0])))
            item['reply_count'] = it.xpath('td[1]/a/text()').extract()
