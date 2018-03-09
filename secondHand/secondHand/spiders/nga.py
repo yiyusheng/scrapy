@@ -5,6 +5,8 @@ from scrapy.spiders import CrawlSpider
 from datetime import datetime,timedelta
 from secondHand.items import SecondhandItem
 import time
+from selenium import webdriver
+
 
 class NgaSpider(CrawlSpider):
     name = 'nga'
@@ -13,7 +15,7 @@ class NgaSpider(CrawlSpider):
     def start_requests(self):
         urls = ['http://bbs.nga.cn/thread.php?fid=498&order_by=postdatedesc&page=' + str(i) for i in range(1,5)]
         for url in urls:
-            yield scrapy.Request(url=url, callback=self.parse)
+            yield scrapy.Request(url=url,callback=self.parse)
     
     def parse(self,response):
         url_prefix = "http://bbs.nga.cn"
@@ -21,9 +23,12 @@ class NgaSpider(CrawlSpider):
         utcTime = datetime.utcnow().replace(second=0,microsecond=0)
         for it in rx:
            item = SecondhandItem()
-           item['title'] = re.sub('\[.*\]','',it.xpath('td[2]/a/text()').extract()[0])
+           t = it.xpath('td[2]/a/text()').extract()
+           t = ''.join(t)
+           item['title'] = re.sub('\[.*\]','',t)
            item['uname'] = it.xpath('td[3]/a/@title').extract()
-           item['time'] = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(int(it.xpath('td[3]/span/text()').extract()[0])))
+           item['time'] = utcTime + timedelta(hours=8)
+           #item['time'] = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(int(it.xpath('td[3]/span/text()').extract()[0])))
            item['reply_count'] = it.xpath('td[1]/a/text()').extract()
            item['create_time'] = utcTime
            item['webname'] = self.name

@@ -6,6 +6,9 @@
 # http://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
 from scrapy import signals
+from selenium import webdriver
+from scrapy.http import HtmlResponse
+import time
 
 
 class SecondhandSpiderMiddleware(object):
@@ -54,3 +57,19 @@ class SecondhandSpiderMiddleware(object):
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
+
+class JavaScriptMiddleware(object):
+    def process_request(self, request, spider):
+        if spider.name == "nga":
+            options = webdriver.ChromeOptions()
+            options.add_argument('headless')
+            options.add_argument('window-size=1920x1080')
+            options.binary_location = '/usr/bin/google-chrome'
+            driver = webdriver.Chrome(chrome_options=options)
+
+            driver.get(request.url)
+            time.sleep(1)
+            body = driver.page_source
+            return HtmlResponse(driver.current_url, body=body, encoding='utf-8', request=request)
+        else:
+            return

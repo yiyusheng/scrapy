@@ -24,6 +24,8 @@ class v2exSpider(CrawlSpider):
            item['uname'] = it.xpath('table/tr/td[3]/span[2]/strong[1]/a/text()').extract()
            item['time'] = utcTime + timedelta(hours=8)
            item['reply_count'] = it.xpath('table/tr/td[4]/a/text()').extract()
+           if(item['reply_count']==[]):
+               item['reply_count'] = 0
            item['create_time'] = utcTime
            item['webname'] = self.name
            item['url'] = "https://www.v2ex.com"+re.sub(r"#.*","",it.xpath('table/tr/td[3]/span[1]/a/@href').extract()[0])

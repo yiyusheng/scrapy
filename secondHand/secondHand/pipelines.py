@@ -6,7 +6,7 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 
-import pymysql,warnings,datetime
+import pymysql,warnings,datetime,re
 
 #%% save in MySQL
 def dbHandle():
@@ -18,6 +18,15 @@ def dbHandle():
         use_unicode = True
     )
     return conn
+
+def checkempty(item):
+    for k in item.keys():
+        if item[k]==[]:
+            if k in {'view_count','reply_count'}:
+                item[k] = 0
+            else:
+                item[k] = ''
+    return(item)
     
 class SecondhandPipeline(object):
     numDone = 0
@@ -33,9 +42,9 @@ class SecondhandPipeline(object):
         cursor.execute("set names 'utf8';")
         cursor.execute("set character set utf8;")
         try:
+            item = checkempty(item)
             sql = "INSERT IGNORE INTO secondHand(title,uname,time,reply_count,create_time,webname,url,ext1,ext2,ext3,ext4,ext5,update_time) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
-            cursor.execute(sql,(item['title'],item['uname'],item['time'],item['reply_count'],item['create_time'],spider.name,item['url'],
-                                item['view_count'],item['price'],item['location'],item['ext4'],item['ext5'],item['time']))
+            cursor.execute(sql,(item['title'],item['uname'],item['time'],item['reply_count'],item['create_time'],spider.name,item['url'],item['view_count'],item['price'],item['location'],item['ext4'],item['ext5'],item['time']))
             cursor.connection.commit()
             self.numDone += 1
 
@@ -51,11 +60,15 @@ class SecondhandPipeline(object):
                         cursor.execute(sql,(item['time'],item['url'],item['title']))
                         cursor.connection.commit()
                 self.numDup += 1
+            elif u'Incorrect string value' in str(e):
+                pass
             else:
-                print("["+datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")+"]",e)
+                print("["+datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")+"]\t"+str(e))
+                print(item)
                 self.numError += 1
             dbObject.rollback()
         return item
+
     def get_statistic(self,spider):
         return {'numDone':self.numDone,'numDup':self.numDup,
                 'numError':self.numError,'spider':spider.name}
