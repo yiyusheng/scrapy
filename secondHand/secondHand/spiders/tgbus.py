@@ -22,6 +22,7 @@ class TgbusSpider(CrawlSpider):
            item['title'] = it.xpath('tr/th/a[2]/text()').extract()
            item['uname'] = it.xpath('tr/td[2]/cite/a/text()').extract()
            item['time'] = it.xpath('tr/td[2]/em/span/text()').extract()
+           item['time'] = datetime.strptime(item['time'],'%Y-%m-%d %H:%M:%S')+timedelta(hours=-8) 
            item['reply_count'] = it.xpath('tr/td[3]/a/text()').extract()
            item['create_time'] = utcTime
            item['webname'] = self.name

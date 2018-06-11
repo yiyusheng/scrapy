@@ -22,7 +22,7 @@ class v2exSpider(CrawlSpider):
            item = SecondhandItem()
            item['title'] = it.xpath('table/tr/td[3]/span[1]/a/text()').extract()[0]
            item['uname'] = it.xpath('table/tr/td[3]/span[2]/strong[1]/a/text()').extract()
-           item['time'] = utcTime + timedelta(hours=8)
+           item['time'] = utcTime
            item['reply_count'] = it.xpath('table/tr/td[4]/a/text()').extract()
            if(item['reply_count']==[]):
                item['reply_count'] = 0

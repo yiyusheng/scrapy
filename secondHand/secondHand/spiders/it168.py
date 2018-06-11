@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import scrapy
-from datetime import datetime
+from datetime import datetime,timedelta
 from scrapy.spiders import CrawlSpider
 from secondHand.items import SecondhandItem
 
@@ -21,6 +21,7 @@ class it168Spider(CrawlSpider):
            item['title'] = it.xpath('tr/th/div[1]/h3/a/text()').extract()[0]
            item['uname'] = it.xpath('tr/th/div[2]/p[1]/a/text()').extract()
            item['time'] = it.xpath('tr/th/div[2]/p[1]/span/text()').extract()[0].replace('.','-')+':00'
+           item['time'] = datetime.strptime(item['time'],'%Y-%m-%d %H:%M:%S') + timedelta(hours=-8)
            item['reply_count'] = it.xpath('tr/th/div[2]/span/text()').extract()
            item['create_time'] = utcTime
            item['webname'] = self.name

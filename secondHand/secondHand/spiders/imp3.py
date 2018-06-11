@@ -20,7 +20,7 @@ class imp3Spider(CrawlSpider):
            item = SecondhandItem()         
            item['title'] = it.xpath('tr/th/a[3]/text()').extract()
            item['uname'] = it.xpath('tr/td[2]/cite/a/text()').extract()
-           item['time'] = utcTime + timedelta(hours=8)
+           item['time'] = utcTime
            item['reply_count'] = it.xpath('tr/td[3]/a/text()').extract()
            item['create_time'] = utcTime
            item['webname'] = self.name

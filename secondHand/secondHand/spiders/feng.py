@@ -26,20 +26,24 @@ class FengSpider(CrawlSpider):
            
            if len(timeC)>0:
                finalTime = timeC + ' 00:00:00'
+               finalTime = datetime.strptime(finalTime,'%Y-%m-%d %H:%M:%S')+timedelta(hours=-8)
            elif u'天前' in timeB:
                finalTime = timeA + ' 00:00:00'
+               finalTime = datetime.strptime(finalTime,'%Y-%m-%d %H:%M:%S')+timedelta(hours=-8)
            elif u'前天' in timeB:
                finalTime = timeA + ' ' + timeB.replace(u'前天','') + ':00'
+               finalTime = datetime.strptime(finalTime,'%Y-%m-%d %H:%M:%S')+timedelta(hours=-8)
            elif u'昨天' in timeB:
                finalTime = timeA + ' ' + timeB.replace(u'昨天','') + ':00'
+               finalTime = datetime.strptime(finalTime,'%Y-%m-%d %H:%M:%S')+timedelta(hours=-8)
            elif u'半小时前' in timeB:
-               finalTime = utcTime - timedelta(seconds=1800) + timedelta(hours=8)
+               finalTime = utcTime - timedelta(seconds=1800)
            elif u'小时前' in timeB:
-               finalTime = utcTime - timedelta(hours=int(timeB.replace(u'小时前',''))) + timedelta(hours=8)
+               finalTime = utcTime - timedelta(hours=int(timeB.replace(u'小时前','')))
            elif u'分钟前' in timeB:
-               finalTime = utcTime - timedelta(minutes=int(timeB.replace(u'分钟前',''))) + timedelta(hours=8)
+               finalTime = utcTime - timedelta(minutes=int(timeB.replace(u'分钟前','')))
            elif u'秒前' in timeB:
-               finalTime = utcTime - timedelta(seconds=int(timeB.replace(u'秒前',''))) + timedelta(hours=8)
+               finalTime = utcTime - timedelta(seconds=int(timeB.replace(u'秒前','')))
            
            
            finalTime = str(finalTime)

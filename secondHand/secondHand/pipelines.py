@@ -7,6 +7,7 @@
 
 
 import pymysql,warnings,datetime,re
+from datetime import timedelta
 
 #%% save in MySQL
 def dbHandle():

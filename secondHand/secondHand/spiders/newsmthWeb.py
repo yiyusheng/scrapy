@@ -24,9 +24,11 @@ class NewsmthwebSCSpider(CrawlSpider):
                finalTime = rawTime + ' 00:00:00'
            else:
                finalTime = e8Time.strftime('%Y-%m-%d ') + str(rawTime.replace(u'\u2003',''))
+           finalTime = datetime.strptime(finalTime,'%Y-%m-%d %H:%M:%S')
+           #if datetime.strptime(finalTime,'%Y-%m-%d %H:%M:%S') > e8Time:
+           #    finalTime = e8Time
            
-           if datetime.strptime(finalTime,'%Y-%m-%d %H:%M:%S') > e8Time:
-               finalTime = e8Time
+           finalTime = finalTime+timedelta(hours=-8)
            
            item = SecondhandItem()
            item['title'] = it.xpath('td[2]/a/text()').extract()
@@ -64,9 +66,10 @@ class NewsmthwebSDSpider(CrawlSpider):
                finalTime = rawTime + ' 00:00:00'
            else:
                finalTime = e8Time.strftime('%Y-%m-%d ') + str(rawTime.replace(u'\u2003',''))
-           
-           if datetime.strptime(finalTime,'%Y-%m-%d %H:%M:%S') > e8Time:
-               finalTime = e8Time
+           finalTime = datetime.strptime(finalTime,'%Y-%m-%d %H:%M:%S')
+           #if datetime.strptime(finalTime,'%Y-%m-%d %H:%M:%S') > e8Time:
+           #    finalTime = e8Time
+           finalTime = finalTime+timedelta(hours=-8)
             
            item = SecondhandItem()
            item['title'] = it.xpath('td[2]/a/text()').extract()

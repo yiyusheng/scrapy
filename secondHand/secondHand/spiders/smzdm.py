@@ -27,14 +27,14 @@ class SmzdmSpider(CrawlSpider):
                finalTime = rawTime + ':00'
            else:
                finalTime = e8Time.strftime('%Y-%m-%d ') + str(rawTime) + ':00'
-           
-           if datetime.strptime(finalTime,'%Y-%m-%d %H:%M:%S') > e8Time:
+           finalTime = datetime.strptime(finalTime,'%Y-%m-%d %H:%M:%S')
+           if finalTime > e8Time:
                finalTime = e8Time
             
            item = SecondhandItem()
            item['title'] = it.xpath('div[9]/a/text()').extract()
            item['uname'] = it.xpath('div[2]/a/text()').extract()
-           item['time'] = finalTime
+           item['time'] = finalTime+timedelta(hours=-8)
            item['reply_count'] = it.xpath('div[7]/a/em/text()').extract()
            item['create_time'] = utcTime
            item['webname'] = self.name

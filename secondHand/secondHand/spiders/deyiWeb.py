@@ -17,7 +17,6 @@ class DeyiwebSpider(CrawlSpider):
     def parse(self,response):
         rx = response.xpath("//tbody[contains(@id,'normalthread')]")
         utcTime = datetime.utcnow().replace(second=0,microsecond=0)
-        e8Time = utcTime + timedelta(hours=8)
 
         
         for it in rx:
@@ -27,7 +26,12 @@ class DeyiwebSpider(CrawlSpider):
                continue
            else:
                replyCount=replyCount[0]
-           finalTime = int(replyCount)==0 and replyTime+':00' or e8Time
+           if int(replyCount)==0:
+               finalTime = datetime.strptime(replyTime+':00','%Y-%m-%d %H:%M:%S')
+               finalTime = finalTime+timedelta(hours=-8)
+           else:
+               finalTime = utcTime
+           #finalTime = int(replyCount)==0 and replyTime+':00' or e8Time
            
            item = SecondhandItem()
            item['title'] = it.xpath('tr/th/a[1]/text()').extract()

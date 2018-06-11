@@ -27,8 +27,7 @@ class NgaSpider(CrawlSpider):
            t = ''.join(t)
            item['title'] = re.sub('\[.*\]','',t)
            item['uname'] = it.xpath('td[3]/a/@title').extract()
-           item['time'] = utcTime + timedelta(hours=8)
-           #item['time'] = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(int(it.xpath('td[3]/span/text()').extract()[0])))
+           item['time'] = utcTime
            item['reply_count'] = it.xpath('td[1]/a/text()').extract()
            item['create_time'] = utcTime
            item['webname'] = self.name

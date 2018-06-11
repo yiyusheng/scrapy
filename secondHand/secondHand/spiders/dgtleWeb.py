@@ -22,7 +22,7 @@ class DgtleWebSpider(CrawlSpider):
            item = SecondhandItem()
            item['title'] = it.xpath('div[2]/p[1]/@title').extract()
            item['uname'] = it.xpath('div[2]/p[2]/text()').extract()
-           item['time'] = utcTime + timedelta(hours=8)
+           item['time'] = utcTime
            item['reply_count'] = re.findall(r'\d+',it.xpath('p[2]/span[3]/text()').extract()[0])[0]
            item['create_time'] = utcTime
            item['webname'] = self.name
