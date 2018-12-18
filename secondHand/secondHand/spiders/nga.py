@@ -10,15 +10,18 @@ from selenium import webdriver
 
 class NgaSpider(CrawlSpider):
     name = 'nga'
-    allowed_domains = ['bbs.ngacn.cc']
+    allowed_domains = ['bbs.nga.cn']
+    #allowed_domains = ['bbs.ngacn.cc']
 
     def start_requests(self):
-        urls = ['http://bbs.ngacn.cc/thread.php?fid=498&order_by=postdatedesc&page=' + str(i) for i in range(1,3)]
+        urls = ['http://bbs.nga.cn/thread.php?fid=498&order_by=postdatedesc&page=' + str(i) for i in range(1,3)]
+        #urls = ['http://bbs.ngacn.cc/thread.php?fid=498&order_by=postdatedesc&page=' + str(i) for i in range(1,3)]
         for url in urls:
             yield scrapy.Request(url=url,callback=self.parse)
     
     def parse(self,response):
-        url_prefix = "http://bbs.ngacn.cc"
+        url_prefix = "http://bbs.nga.cn"
+        #url_prefix = "http://bbs.ngacn.cc"
         rx = response.xpath("//tr[contains(@class,'topicrow')]")
         utcTime = datetime.utcnow().replace(second=0,microsecond=0)
         for it in rx:
