@@ -6,7 +6,7 @@ from datetime import datetime,timedelta
 from secondHand.items import SecondhandItem
 
 class DgtleWebSpider(CrawlSpider):
-    name = 'dgtleWeb'
+    name = 'dgtle'
     allowed_domains = ['dgtle.com']
 
     def start_requests(self):

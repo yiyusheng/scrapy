@@ -6,7 +6,7 @@ from secondHand.items import SecondhandItem
 
 
 class DeyiwebSpider(CrawlSpider):
-    name = 'deyiWeb'
+    name = 'deyi'
     allowed_domains = ['deyi.com']
 
     def start_requests(self):

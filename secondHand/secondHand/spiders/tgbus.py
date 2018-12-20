@@ -6,7 +6,7 @@ from secondHand.items import SecondhandItem
 
 
 class TgbusSpider(CrawlSpider):
-    name = 'tgbusWeb'
+    name = 'tgbus'
     allowed_domains = ['bbs.tgbus.com']
 
     def start_requests(self):

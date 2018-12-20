@@ -5,7 +5,7 @@ from scrapy.spiders import CrawlSpider
 from secondHand.items import SecondhandItem
 
 class FengSpider(CrawlSpider):
-    name = 'fengWeb'
+    name = 'feng'
     allowed_domains = ['bbs.feng.com']
 
     def start_requests(self):

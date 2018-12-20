@@ -5,11 +5,11 @@ from scrapy.spiders import CrawlSpider
 from secondHand.items import SecondhandItem
 
 class NewsmthwebSCSpider(CrawlSpider):
-    name = 'newsmthWebSC'
+    name = 'smthSC'
     allowed_domains = ['newsmth.net']
 
     def start_requests(self):
-        urls = ['http://www.newsmth.net/nForum/board/SecondComputer?p=' + str(i) for i in range(1,5)]
+        urls = ['http://www.newsmth.net/nForum/board/SecondComputer?p=' + str(i) for i in range(1,2)]
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
     
@@ -47,11 +47,11 @@ class NewsmthwebSCSpider(CrawlSpider):
            yield item
            
 class NewsmthwebSDSpider(CrawlSpider):
-    name = 'newsmthWebSD'
+    name = 'smthSD'
     allowed_domains = ['newsmth.net']
 
     def start_requests(self):
-        urls = ['http://www.newsmth.net/nForum/board/SecondDigi?p=' + str(i) for i in range(1,5)]
+        urls = ['http://www.newsmth.net/nForum/board/SecondDigi?p=' + str(i) for i in range(1,2)]
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
     

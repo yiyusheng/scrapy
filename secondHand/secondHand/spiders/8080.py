@@ -5,12 +5,12 @@ from scrapy.spiders import CrawlSpider
 from secondHand.items import SecondhandItem
 
 
-class GfanSpider(CrawlSpider):
-    name = 'gfan'
-    allowed_domains = ['bbs.gfan.com']
+class B8080Spider(CrawlSpider):
+    name = '8080'
+    allowed_domains = ['8080.net']
 
     def start_requests(self):
-        urls = ['http://bbs.gfan.com/forum.php?mod=forumdisplay&fid=23&orderby=dateline&orderby=dateline&filter=author&page=' + str(i) for i in range(1,3)]
+        urls = ['http://bbs.8080.net/forum.php?mod=forumdisplay&fid=120&orderby=dateline&filter=author&orderby=dateline&page=' + str(i) for i in range(1,2)]
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
     
@@ -18,18 +18,15 @@ class GfanSpider(CrawlSpider):
         rx = response.xpath("//tbody[contains(@id,'normalthread')]")
         utcTime = datetime.utcnow().replace(second=0,microsecond=0)
         for it in rx:
-           timeA = it.xpath('tr/td[2]/em/span/font/text()').extract()
-           timeB = it.xpath('tr/td[2]/em/span/text()').extract()
-           finalTime = len(timeA)>=len(timeB) and timeA or timeB
-           
            item = SecondhandItem()
-           item['title'] = it.xpath('tr/th/a/text()').extract()[0]
-           item['uname'] = it.xpath('tr/td[2]/cite/a/text()').extract()
-           item['time'] = finalTime[0]
-           item['reply_count'] = it.xpath('tr/td[3]/a/text()').extract()
+           item['title'] = it.xpath('tr/th/a[1]/text()').extract()
+           item['uname'] = it.xpath('tr/td[2]/cite/text()').extract()[1]
+           item['time'] = it.xpath('tr/td[2]/em/span/text()').extract()
+           item['time'] = datetime.strptime(item['time'][0],'%Y-%m-%d %H:%M')+timedelta(hours=-8) 
+           item['reply_count'] = it.xpath('tr/td[3]/span/text()').extract()
            item['create_time'] = utcTime
            item['webname'] = self.name
-           item['url'] = it.xpath('@id').extract()[0].replace('normalthread_','http://bbs.gfan.com/android-')+'-1-1.html'
+           item['url'] = it.xpath('@id').extract()[0].replace('normalthread_','http://bbs.8080.net/forum.php?mod=viewthread&tid=')
            
            item['view_count'] = it.xpath('tr/td[3]/em/text()').extract()
            item['price'] = ''
