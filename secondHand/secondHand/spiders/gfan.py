@@ -17,15 +17,18 @@ class GfanSpider(CrawlSpider):
     def parse(self,response):
         rx = response.xpath("//tbody[contains(@id,'normalthread')]")
         utcTime = datetime.utcnow().replace(second=0,microsecond=0)
+        
         for it in rx:
            timeA = it.xpath('tr/td[2]/em/span/font/text()').extract()
            timeB = it.xpath('tr/td[2]/em/span/text()').extract()
            finalTime = len(timeA)>=len(timeB) and timeA or timeB
+           finalTime = datetime.strptime(finalTime[0]+':00','%Y-%m-%d %H:%M:%S')
+           finalTime = finalTime+timedelta(hours=-8)
            
            item = SecondhandItem()
            item['title'] = it.xpath('tr/th/a/text()').extract()[0]
            item['uname'] = it.xpath('tr/td[2]/cite/a/text()').extract()
-           item['time'] = finalTime[0]
+           item['time'] = finalTime
            item['reply_count'] = it.xpath('tr/td[3]/a/text()').extract()
            item['create_time'] = utcTime
            item['webname'] = self.name
