@@ -10,7 +10,7 @@ class GfanSpider(CrawlSpider):
     allowed_domains = ['bbs.gfan.com']
 
     def start_requests(self):
-        urls = ['http://bbs.gfan.com/forum.php?mod=forumdisplay&fid=23&orderby=dateline&orderby=dateline&filter=author&page=' + str(i) for i in range(1,3)]
+        urls = ['http://bbs.gfan.com/forum.php?mod=forumdisplay&fid=23&orderby=dateline&orderby=dateline&filter=author&page=' + str(i) for i in range(1,2)]
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
     
@@ -36,6 +36,7 @@ class GfanSpider(CrawlSpider):
            item['location'] = ''
            item['ext4'] = ''
            item['ext5'] = ''
+           self.crawler.stats.get_stats()
            yield item
            
 #drop table test;create table test like secondHand;
