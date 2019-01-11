@@ -19,14 +19,14 @@ class XitekSpider(CrawlSpider):
         utcTime = datetime.utcnow().replace(second=0,microsecond=0)
         for it in rx:
            item = SecondhandItem()
-           item['title'] = it.xpath('tr/th/a/text()').extract()[0]
-           item['uname'] = it.xpath('tr/td[2]/a/text()').extract()[0]
+           item['title'] = it.xpath('tr/th/a/text()').extract()[-1]
+           item['uname'] = it.xpath('tr/td[2]/a/text()').extract()
            item['time'] = utcTime
-           item['reply_count'] = it.xpath('tr/td[3]/text()').extract()[0]
+           item['reply_count'] = it.xpath('tr/td[3]/text()').extract()
            item['create_time'] = utcTime
            item['webname'] = self.name
-           item['url'] = 'http://forum.xitek.com/'+it.xpath('tr/th/a/@href').extract()[0]
-           item['view_count'] = it.xpath('tr/td[4]/text()').extract()[0]
+           item['url'] = 'http://forum.xitek.com/'+it.xpath('tr/th/a/@href').extract()[-1]
+           item['view_count'] = it.xpath('tr/td[4]/text()').extract()
            item['price'] = ''
            item['location'] = ''
            item['ext4'] = ''

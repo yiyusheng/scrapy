@@ -20,7 +20,7 @@ class FengniaoSpider(CrawlSpider):
         utcTime = datetime.utcnow().replace(second=0,microsecond=0)
         for it in rx:
            item = SecondhandItem()
-           item['title'] = it.xpath('div[2]/a/text()').extract()
+           item['title'] = it.xpath('div[2]/a/text()').extract()[0]
            item['uname'] = 'id_'+it.xpath('div[2]/div/div/@data-id').extract()[0]
            item['time'] = utcTime
            item['reply_count'] = ''

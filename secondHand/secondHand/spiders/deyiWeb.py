@@ -34,7 +34,7 @@ class DeyiwebSpider(CrawlSpider):
            #finalTime = int(replyCount)==0 and replyTime+':00' or e8Time
            
            item = SecondhandItem()
-           item['title'] = it.xpath('tr/th/a[1]/text()').extract()
+           item['title'] = it.xpath('tr/th/a[1]/text()').extract()[0]
            item['uname'] = it.xpath('tr/td[2]/cite/a/text()').extract()
            item['time'] = finalTime
            item['reply_count'] = it.xpath('tr/td[3]/a/text()').extract()

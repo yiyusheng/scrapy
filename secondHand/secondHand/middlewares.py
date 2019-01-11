@@ -60,11 +60,11 @@ class SecondhandSpiderMiddleware(object):
 
 class JavaScriptMiddleware(object):
     def process_request(self, request, spider):
-        spider_using_chrome = ['nga','CHH']
+        spider_using_chrome = ['nga','CHH','Right','smzdm']
         if spider.name in spider_using_chrome:
             options = webdriver.ChromeOptions()
             options.add_argument('headless')
-            options.add_argument('window-size=1920x1080')
+            options.add_argument('window-size=800x600')
             options.binary_location = '/usr/bin/google-chrome'
             driver = webdriver.Chrome(chrome_options=options)
             driver.get(request.url)
@@ -73,7 +73,14 @@ class JavaScriptMiddleware(object):
 
             if spider.name == 'nga':
               return HtmlResponse(driver.current_url, body=body, encoding='utf-8', request=request)
-            elif spider.name == 'CHH':
+            
+            if spider.name == 'smzdm':
+              return HtmlResponse(driver.current_url, body=body, encoding='utf-8', request=request)
+
+            if spider.name == 'Right':
+              return HtmlResponse(driver.current_url, body=body, encoding='utf-8', request=request)
+
+            if spider.name == 'CHH':
               username = self.driver.find_element_by_id("User")
               password = self.driver.find_element_by_name("Pass")
               username.send_keys("")
