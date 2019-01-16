@@ -26,7 +26,7 @@ class HifidiySpider(CrawlSpider):
            item['reply_count'] = it.xpath('tr/td[3]/a/text()').extract()
            item['create_time'] = utcTime
            item['webname'] = self.name
-           item['url'] = it.xpath('@id').extract()[0].replace('normalthread_','http://bbs.8080.net/forum.php?mod=viewthread&tid=')
+           item['url'] = it.xpath('@id').extract()[0].replace('normalthread_','http://bbs.hifidiy.net/forum.php?mod=viewthread&tid=')
            
            item['view_count'] = 0
            item['price'] = ''
