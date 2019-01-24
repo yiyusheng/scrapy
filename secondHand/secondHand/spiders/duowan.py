@@ -27,7 +27,7 @@ class DuowanSpider(CrawlSpider):
            item['reply_count'] = it.xpath('tr/td[3]/a/text()').extract()
            item['create_time'] = utcTime
            item['webname'] = self.name
-           item['url'] = it.xpath('@id').extract()[0].replace('normalthread_','http://bbs.duowan.com/forum.php?mod=viewthread&tid=')
+           item['url'] = it.xpath('@id').extract()[0].replace('normalthread_','http://bbs.duowan.com/thread-')+'-1-1.html'
            item['view_count'] = it.xpath('tr/td[3]/em/text()').extract()
            item['price'] = ''
            item['location'] = ''
