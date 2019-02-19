@@ -18,11 +18,10 @@ class Stage1stSpider(CrawlSpider):
         yield scrapy.Request(url=self.start_url, callback=self.login)
             
     def login(self,response):
-        path_config = os.path.expanduser('~')+'/Data/secondHand/'+self.name
-        #json.dump(a,open(path_config,'w'))
+        #path_config = os.path.expanduser('~')+'/Data/secondHand/'+self.name
+        path_config = '/home/yiyusheng/Data/secondHand/'+self.name
         data_config = json.load(open(path_config))
         return [FormRequest.from_response(response,formdata=data_config,callback=self.check_login_usable)]
-        #return [FormRequest.from_response(response,formdata=data_config,callback=self.check_login)]
     
     def check_login(self,response):
         if "登陆失败" in response.body:
