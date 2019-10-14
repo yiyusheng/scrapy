@@ -1,0 +1,705 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.628, minimum-scale=0.628, maximum-scale=2.0" />
+    <meta name="keywords" content="数字尾巴,尾巴,DGTLE,数码评测,数码论坛,科技资讯,科技媒体,数码体验,数码周边,手机评测,数码开箱,摄影,相机,周边,旅行,文具,笔记本,平板,生活,论坛,社区,应用,手机应用" />
+    <meta name="description" content="致力于分享美好数字生活体验，囊括你闻所未闻的最丰富数码资讯，触所未触最抢鲜产品评测，随时随地感受尾巴们各式数字生活精彩图文、摄影感悟、旅行游记、爱物分享。旗下产品：精品电商平台「尾巴良品」 ；移动客户端「数字尾巴」 ，覆盖 iOS、Android、WP8 三大主流平台。 ,数字尾巴" />
+    <title> 数字尾巴 分享美好数字生活 |   </title>
+    <!--  -->
+    <link href="/css/common/reset.css" rel="stylesheet" />
+<link href="/css/sale/idle_index.css" rel="stylesheet" />
+<link href="/css/common/common.css" rel="stylesheet" />
+<link href="/css/login/login.css" rel="stylesheet" />
+<link href="/js/libs/swiper/swiper-4.3.5.min.css" rel="stylesheet" />
+<link href="/css/message/message.css" rel="stylesheet" />
+<script src="/js/libs/jQuery_v1.12.4.js"></script>
+<script src="/js/libs/swiper/swiper-4.3.5.min.js"></script>
+<script src="/js/common/jquery-autoHeightTextarea.js"></script>
+<script src="/js/common/common.js"></script>
+<script src="/js/login/login.js"></script>
+<script src="/js/common/header.js"></script>
+<script src="/js/common/gt.js"></script><script charset="UTF-8" async="" src="https://api.geetest.com/gettype.php?gt=66b776bf7cf30563dd55d9445749a4b9&amp;callback=geetest_1571053116000"></script><script charset="UTF-8" async="" src="https://static.geetest.com/static/js/fullpage.8.8.5.js"></script><script charset="UTF-8" src="https://api.geetest.com/get.php?gt=66b776bf7cf30563dd55d9445749a4b9&amp;challenge=903c22fff74414dad3085fd039fc6fb6&amp;lang=zh-cn&amp;pt=0&amp;w=D7693fidY7akw(7O6wbE1ZeuVGcCEuzcVbugN)IWqGVpXxpSJP(ly0o3AgRFpTzJe5tViQeOlHjCUGjTscVqgvV0FdbTUQHpuMtvhu4jzTSIbgx9IxuHVBx925OAzE39DvPpF3QGacHkns9urveWmIhWWz5ADP9ifI7chjqD5GYBhQ2FJUi2cl(AOgR(sPHjnYuzj(3oN(arH6RG9N1VWZGkYOY60SPNVi6wuNxDvQo95Mun(eXUbSxa2SDWoFZrgC4EMlbHP1YCvbD8kts(9H)lAcRmsYW53NhDWn)m8eCOps0m5be)FioSa4D6n9w(Wdih)(2dYmVL42GtOQujvDxd8YW(vLL1TRVoUsHnYefHtGRvrqrXSzijiqcH9HehetoN9)3ni6yoQUYxyk8yxNOWXQT5oATI9AhVgeWJSZz(WZzavk(6rQM8q5FY(p6JtL(9vD4zHbPMl5z9eUw3SOVk9e28LqOQivNK)mFbqhZiGimHndIsthRNhu5HgTUPM7q97ovb52J7qwLYMqv50fQonvHz33v)r318wl1XxeJyCFbr68NJZNXHaobE3z2CM2WwkeLy1fIvk4vFpbDHhQA3bp7eNGFABrwN85kEeCxAzriUx9OqWc7YB4Z(KpoqWXFfLzO7UcdMtF2I8K2)Hyrb0b9zoPjFuRYKKphi4vnFwaPd5UqHXkXQ)(EQNpNjTRnhfNy0v9korVfXAF1BugMCs7jOUPGGptuTEUEGsTlFE7AYPMQzEv2m(N7zop468ttKn7BRLYwq8lEhbRqOV()3Tij1EJ2REoQuFuNzdnFhqyHwcEcwDlSavwzVgWS5cJDHsVBs3P(y05wIKn0CeQmBeGtwurRzodDoZ)55ga1GRkpghcuLwE9V5VXKCCUsnC0Du)C03C3I5ovRb8EWlt2KJNQa1plNiuDMqMvsKWYgK44AMGAXnykjU)JUEr0enCe4aH(U7QmvBs2uzRnrZVtwxpo30gbfucaAsvIs5H)3JMC6xC0NsZwRJyPUApWyYYZuVigRtSCwHrCCXNkWcz5xSWukR2LU8cc7mVHNRdLtTJ(ib3e5YDHL2g7nub4shp6wEvlEQXk43pMfVMIK61nYl29DfFu7p56n)SKEmP2IvnTSk4LDFMMS96FCTZ)uHYBwyu)gPm7wTei5BHk05JJvPXR4Wu1RdzA4CTt)OzAGGh)Bb9O4N9GZxK75bFAVf7OwYXPPVW4iZT2zr7ROL8UzhUI69AlE2BwiB4raHr2BQ9NnRJ1oHIDLLeya9juW5EzJOKHjE8Z)OnD8hm(8QLZuk2trYFAx2YxpWqa0gqOMY(gU88kOn1cczbEXATDOQge4mv3TX(tsaWSjJT3Snm5ZAzHBDPlNLFlxsv9nz1jzsUYHVZYmhPdYNtllkYLGQZtin5j2MEqd9HVw(lFDb8Mzl1tGFoJl6R1sMpZ)v7Sqf8zMOVJJD5ceQaOt96UrL)fLTr1GgH4qqTfr1VWsj2z)ruqP53ZqEHBq3)(wGG9RJU)brwMb8W(83w)SOHnOSRKIWm(Fnk3y8XUlNwnWZyUNQL1nKZHMHJZhsmCqS5gkzs7ueTn5vT7PHqADL8p8IBpW9ovoUwM1zeN956CQweWHAeV3ena)Ba3KBuI6v(5yqSr3IQGHARkMhKRxROeBbb5127881bf478365a0586fa4e1b9196fee3d8b99be76efbe89733298eab4969b041b393628a45893a3881712442d204b9dfbe965c694431c995d52bfcddb5c5b2c46afa410e30c60c365a62f9546437e32412d78b15e9765d48eb0839e5fd4dad57da54368d80958cb19448edc3d05d321a1f53bb48def2439062e326bb2ebf&amp;callback=geetest_1571053119588"></script><link href="https://static.geetest.com/static/wind/style_https.1.5.6.css" rel="stylesheet" /></head>
+<body>
+<header>
+	<div class="header">
+		<div class="logo">
+		<a href="/">	
+			<h1>数字尾巴</h1>
+			<i class="icon-Dgtlex-dgtlexlogo-Dgtlelogo"></i>
+	  </a>			
+	</div>			
+	<img src="http://e.cn.miaozhen.com/r/k=2133084&amp;p=7StAo&amp;dx=__IPDX__&amp;rt=2&amp;ns=__IP__&amp;ni=__IESID__&amp;v=__LOC__&amp;xa=__ADPLATFORM__&amp;tr=__REQUESTID__&amp;mo=__OS__&amp;m0=__OPENUDID__&amp;m0a=__DUID__&amp;m1=__ANDROIDID1__&amp;m1a=__ANDROIDID__&amp;m2=__IMEI__&amp;m4=__AAID__&amp;m5=__IDFA__&amp;m6=__MAC1__&amp;m6a=__MAC__&amp;m11=__OAID__&amp;o=https://opser.wap.dgtle.com/#/articleDetail/1539979" style="display: none;" />
+	<img src="http://e.cn.miaozhen.com/r/k=2133084&amp;p=7StAo&amp;dx=__IPDX__&amp;rt=2&amp;ns=__IP__&amp;ni=__IESID__&amp;v=__LOC__&amp;xa=__ADPLATFORM__&amp;tr=__REQUESTID__&amp;mo=__OS__&amp;m0=__OPENUDID__&amp;m0a=__DUID__&amp;m1=__ANDROIDID1__&amp;m1a=__ANDROIDID__&amp;m2=__IMEI__&amp;m4=__AAID__&amp;m5=__IDFA__&amp;m6=__MAC1__&amp;m6a=__MAC__&amp;m11=__OAID__&amp;o=http://www.dgtle.com/article-30069-1.html" style="display: none;" />
+	<div class="nav" id="nav">
+		<a href="/" class="">首页</a>
+		<a href="/news">鲸闻</a>
+		<a href="/article">文章</a>
+		<a href="/feed">兴趣</a>
+		<a href="/evaluating">众测</a>
+		<a href="/activity">活动</a>
+		<a href="/live">直播</a>
+		<a href="/sale" class="active">闲置</a>
+		<!-- <a href="/dgmobile">客户端</a> -->
+	</div>
+	<!-- 搜索列表 -->
+	<div class="search">
+		<!--head_encode_uid用于在js中判断是否登录-->
+		<input id="head_encode_uid" type="hidden" value="0" />
+		<input id="is_admin_oper" type="hidden" value="0" />
+		<form id="search_head_form" action="/search">
+				<div class="search-1"><i class="icon-Dgtlex-dgtlexicon-search"></i></div>
+				<div class="search-2">
+					  <input type="text" class="input-sub" autocomplete="off" name="search_word" size="9" id="headerSearch" placeholder="搜索你感兴趣的..." />
+				</div>
+				<div class="search-3">
+					  <i class="icon-Dgtlex-dgtlexicon-wrong"></i>
+				</div>
+		</form>	
+		<section class="search-list">
+			<!-- 已输入状态 -->
+			<div class="search-list-1 import-value">
+				<ul id="search_suggest_ul">
+				</ul>
+			</div>
+			<!-- 为输入状态 -->
+						<div class="search-list-1 no-import-value">
+				<div>尾巴热搜</div>
+				<ul id="hot_search">
+										<li class="search-value-1"><span>mate30</span></li>
+										<li class="search-value-1"><span>华为</span></li>
+										<li class="search-value-1"><span>switch</span></li>
+									</ul>
+			</div>
+						<div class="search-list-1 no-import-value search-history">
+				<div>
+					<span>搜索历史</span>
+					<span class="clear-history">清空</span>
+				</div>
+				<ul class="history-value">
+				</ul>
+			</div>	
+		</section>		  
+	</div>
+	<div class="header-right">
+		<div class="search-sub"><i class="icon-Dgtlex-dgtlexicon-search"></i></div>
+		<!-- 已经登录状态 -->
+				<!-- 未登录 -->
+				<div class="no-login">
+			登录
+		</div>
+			</div>
+	</div>			
+</header>
+<!-- 登录弹窗 -->
+  <div class="login-warp">
+    <div class="login">
+        <div class="login-close"><i class="icon-all_off"></i></div>
+        <div class="login-drag" id="loginDrag"></div>
+        <div class="login-head"><i class="icon-Dgtlex-dgtlexlogo-Dgtlelogo"></i></div>
+        <section class="login-conten login-conten-1">
+            <div>
+                    <p class="login-msg">未注册的手机号将自动注册</p>
+                    <form action="">
+                    <ol>
+                        <li class="tel-warp">
+                            <div class="gain-area-code"><span>+86</span><i class="triangle-top-icon"></i></div>
+                            <div><input type="text" placeholder="输入手机号码" id="tel" /></div>
+                        </li>
+                        <li class="code-warp">
+                            <div><input type="text" placeholder="输入验证码" id="code" /></div>
+                            <div class="gain-tel-code">
+                                <span class="gain-code code">获取验证码</span>
+                                <span class="count-down">60s</span>
+                            </div>
+                        </li>
+                    </ol>
+                    </form>
+            </div>
+            <div class="login-area-code">
+                <div class="arrow-icon"></div>
+                <div class="login-area-code-1">
+                    <span class="login-area-code-top">常用国家／地区</span>
+                    <ul>
+                        <li><span>中国</span><em>+86</em></li>
+                    </ul>
+                </div>
+                <div class="login-area-code-1">
+                    <span class="login-area-code-top">全部国家／地区</span>
+                    <ul>
+                        <li><span>香港特别行政区</span><em>+852</em></li><li><span>澳门特别行政区</span><em>+853</em></li>
+                        <li><span>中国台湾</span><em>+886</em></li><li><span>日本</span><em>+81</em></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="login-submit icon-more"><span id="login1">登录</span></div>
+        </section>
+        <section class="login-conten login-conten-2">
+            <div>
+                    <form action="">
+                    <ol>
+                        <li class="name-warp">
+                            <div><input type="text" placeholder="请输入账户/邮箱/手机" id="name" /></div>
+                        </li>
+                        <li class="password-warp">
+                            <div><input type="password" placeholder="请输入密码" id="password" /></div>
+                            <div class="gain-tel-code visible-pass">
+                               <i class="icon-all_see "></i>
+                            </div>
+                        </li>
+                    </ol>
+                    </form>
+                    <a href="/user/findPassword" class="forget-password">忘记密码？</a> 
+            </div>
+            <div class="login-submit icon-more"><span id="login2">登录</span></div>
+        </section>
+        <div class="login-table">使用密码登陆</div>
+        <div class="login-three-sides">
+            <a href="/login/weixinLogin" class="wechat"><i class="icon-Dgtlex-dgtlexicon-wechat"></i></a>
+            <a href="/login/weiboLogin" class="weibo"><i class="icon-Dgtlex-dgtlexicon-sina-weibo"></i></a>
+            <a href="/login/qqLogin" class="qq"><i class="icon-all_qq"></i></a>
+        </div>
+        <div class="login-footer">登录即同意<a href="/terms">「软件许可及服务协议」</a></div>
+    </div>
+</div>
+<script id="search-list-tmpl" type="text/html">
+    {{each suggestes suggest index}}
+    &lt;li class="search-value-1"&gt;&lt;span&gt;{{suggest}}&lt;/span&gt;&lt;/li&gt;
+    {{/each}}
+</script>
+<script>
+$(function(){
+	$('.header .search-sub').click(function(){
+		$('.search').show();
+		$('.nav').hide();
+		$(this).hide();
+	})
+	$('.header .search-3').click(function(){
+		$('.search').hide();
+		$('.nav').show();
+		$('.search-sub').show();
+	})
+
+})
+
+function toPrivateLetter(){
+	var data={
+            index:3,
+            getdata:'getMessagePrivateLetter'
+    }
+	
+    sessionStorage.setItem('notificationnav', JSON.stringify(data))	
+	window.location.href='/message';
+}
+
+function toMessage(){
+	var data={
+            index:0,
+            getdata:'getMessageNotice'
+    }
+   
+   sessionStorage.setItem('notificationnav', JSON.stringify(data))		
+   window.location.href='/message';
+}
+</script><!-- $content变量的值 就是子页面渲染之后的代码。也就是说子页面中的内容将输出到这个地方-->
+    <div class="idle_wap">
+        <div class="idle-top-wap">
+            <div class="idle-top">
+                    <div class="left">
+                            <h5>闲置</h5>
+                            <span>交易闲置好物</span>
+                        </div>
+                        <a href="javascript:;" id="add_sale" class="right icon-more">
+                            <span>发表闲置</span>
+                        </a>
+            </div>
+        </div>
+        <div class="idle-banner">
+              <ul>
+                                    <li>
+                      <a href="https://www.shanyhs.com/new-pc/dgtle/index.html?channelId=38722&amp;tag=5#/">
+                          <img src="http://s1.dgtle.com/dgtle_img/carouselItem/2019/10/14/50961201910140055147764.png" alt="" />
+                      </a>
+                  </li>
+                                    <li>
+                      <a href="/article-11-1.html">
+                          <img src="http://s1.dgtle.com/dgtle_img/carouselItem/2019/10/14/2f6d9201910140055494672.png" alt="" />
+                      </a>
+                  </li>
+                                    <li>
+                      <a href="/article-121-1.html">
+                          <img src="http://s1.dgtle.com/dgtle_img/carouselItem/2019/10/14/58ee6201910140055578754.png" alt="" />
+                      </a>
+                  </li>
+                                </ul>
+        </div>
+        <div class="idle-content">
+            <ul class="idle-content-nav">
+                <li data_id="0" class="active border-active">全部</li>
+                                <li class="border-active" data_id="109">手机</li>
+                                <li class="border-active" data_id="110">平板</li>
+                                <li class="border-active" data_id="111">电脑</li>
+                                <li class="border-active" data_id="112">生活</li>
+                                <li class="border-active" data_id="113">相机</li>
+                                <li class="border-active" data_id="114">影音</li>
+                                <li class="border-active" data_id="115">外设</li>
+                                <li class="border-active" data_id="116">公告</li>
+                            </ul>
+            <div class="idle-content-list">
+                                
+            
+      <a href="/sale-1543395-1.html" target="_blank" class="idle-content-list-1">
+      <div class="idle-content-list-img">
+          <img class="img-cover" src="" alt="" />
+      </div>
+      <div class="idle-content-list-bottom">
+          <p class="p-omit">苹果xsm 黑解64金色</p>
+          <div class="idle-content-list-pic"><i>¥</i>4050.00</div>
+          <div>
+              <span>广东省 广州市</span>
+              <span>2分钟前·SamTang94</span>
+          </div>
+      </div>
+    </a>
+  
+      <a href="/sale-1543394-1.html" target="_blank" class="idle-content-list-1">
+      <div class="idle-content-list-img">
+          <img class="img-cover" src="http://s1.dgtle.com/dgtle_img/sale/2019/10/14/afe7a201910141932591826.jpeg?imageView2/2/w/500/q/100" alt="" />
+      </div>
+      <div class="idle-content-list-bottom">
+          <p class="p-omit">S10+  8＋128 碳晶黑</p>
+          <div class="idle-content-list-pic"><i>¥</i>3900.00</div>
+          <div>
+              <span>湖南省 长沙市</span>
+              <span>5分钟前·周百万</span>
+          </div>
+      </div>
+    </a>
+  
+      <a href="/sale-1543393-1.html" target="_blank" class="idle-content-list-1">
+      <div class="idle-content-list-img">
+          <img class="img-cover" src="http://s1.dgtle.com/dgtle_img/sale/2019/10/14/17782201910141932471553.jpeg?imageView2/2/w/500/q/100" alt="" />
+      </div>
+      <div class="idle-content-list-bottom">
+          <p class="p-omit">港版粉色64G iphone 6s plus</p>
+          <div class="idle-content-list-pic"><i>¥</i>1000.00</div>
+          <div>
+              <span>江苏省 南京市</span>
+              <span>5分钟前·xiahm86</span>
+          </div>
+      </div>
+    </a>
+  
+      <a href="/sale-1543392-1.html" target="_blank" class="idle-content-list-1">
+      <div class="idle-content-list-img">
+          <img class="img-cover" src="http://s1.dgtle.com/dgtle_img/sale/2019/10/14/d2ce9201910141925035004.jpeg?imageView2/2/w/500/q/100" alt="" />
+      </div>
+      <div class="idle-content-list-bottom">
+          <p class="p-omit">Apple Watch 4 表带 40mm</p>
+          <div class="idle-content-list-pic"><i>¥</i>60.00</div>
+          <div>
+              <span>浙江省 温州市</span>
+              <span>13分钟前·SoHee</span>
+          </div>
+      </div>
+    </a>
+  
+      <a href="/sale-1543391-1.html" target="_blank" class="idle-content-list-1">
+      <div class="idle-content-list-img">
+          <img class="img-cover" src="http://s1.dgtle.com/dgtle_img/sale/2019/10/14/410aa201910141835515145.jpeg?imageView2/2/w/500/q/100" alt="" />
+      </div>
+      <div class="idle-content-list-bottom">
+          <p class="p-omit">日版戴尔G7 7790游戏本2060</p>
+          <div class="idle-content-list-pic"><i>¥</i>10000.00</div>
+          <div>
+              <span>江苏省 南京市</span>
+              <span>1小时前·mrahren</span>
+          </div>
+      </div>
+    </a>
+  
+      <a href="/sale-1543390-1.html" target="_blank" class="idle-content-list-1">
+      <div class="idle-content-list-img">
+          <img class="img-cover" src="http://s1.dgtle.com/dgtle_img/sale/2019/10/14/65cde201910141813417833.jpeg?imageView2/2/w/500/q/100" alt="" />
+      </div>
+      <div class="idle-content-list-bottom">
+          <p class="p-omit">三星s10+</p>
+          <div class="idle-content-list-pic"><i>¥</i>3800.00</div>
+          <div>
+              <span>山东省 青岛市</span>
+              <span>1小时前·我是小尾巴</span>
+          </div>
+      </div>
+    </a>
+  
+      <a href="/sale-1543389-1.html" target="_blank" class="idle-content-list-1">
+      <div class="idle-content-list-img">
+          <img class="img-cover" src="http://s1.dgtle.com/dgtle_img/sale/2019/10/14/63e2d2019101418292230.jpeg?imageView2/2/w/500/q/100" alt="" />
+      </div>
+      <div class="idle-content-list-bottom">
+          <p class="p-omit">switch游戏卡</p>
+          <div class="idle-content-list-pic"><i>¥</i>300.00</div>
+          <div>
+              <span>广东省 深圳市</span>
+              <span>1小时前·sjj1994</span>
+          </div>
+      </div>
+    </a>
+  
+      <a href="/sale-1543388-1.html" target="_blank" class="idle-content-list-1">
+      <div class="idle-content-list-img">
+          <img class="img-cover" src="http://s1.dgtle.com/dgtle_img/sale/2019/10/14/7aac6201910141825165174.jpeg?imageView2/2/w/500/q/100" alt="" />
+      </div>
+      <div class="idle-content-list-bottom">
+          <p class="p-omit">surface pro3 8+256</p>
+          <div class="idle-content-list-pic"><i>¥</i>1750.00</div>
+          <div>
+              <span>上海市 上海市</span>
+              <span>1小时前·一顺百顺</span>
+          </div>
+      </div>
+    </a>
+  
+      <a href="/sale-1543387-1.html" target="_blank" class="idle-content-list-1">
+      <div class="idle-content-list-img">
+          <img class="img-cover" src="http://s1.dgtle.com/dgtle_img/sale/2019/10/14/484ba201910141810188850.jpeg?imageView2/2/w/500/q/100" alt="" />
+      </div>
+      <div class="idle-content-list-bottom">
+          <p class="p-omit">xs max手机壳</p>
+          <div class="idle-content-list-pic"><i>¥</i>150.00</div>
+          <div>
+              <span>福建省 厦门市</span>
+              <span>1小时前·Hoodon</span>
+          </div>
+      </div>
+    </a>
+  
+      <a href="/sale-1543386-1.html" target="_blank" class="idle-content-list-1">
+      <div class="idle-content-list-img">
+          <img class="img-cover" src="http://s1.dgtle.com/dgtle_img/sale/2019/10/14/c3c03201910141804521000.jpeg?imageView2/2/w/500/q/100" alt="" />
+      </div>
+      <div class="idle-content-list-bottom">
+          <p class="p-omit">华为P30 Pro 8+256G ，仅拆封</p>
+          <div class="idle-content-list-pic"><i>¥</i>4500.00</div>
+          <div>
+              <span>黑龙江省 佳木斯市</span>
+              <span>1小时前·影子哥</span>
+          </div>
+      </div>
+    </a>
+  
+      <a href="/sale-1543385-1.html" target="_blank" class="idle-content-list-1">
+      <div class="idle-content-list-img">
+          <img class="img-cover" src="http://s1.dgtle.com/dgtle_img/sale/2019/10/14/3fce8201910141802342636.jpeg?imageView2/2/w/500/q/100" alt="" />
+      </div>
+      <div class="idle-content-list-bottom">
+          <p class="p-omit">美版iPhone8  256G</p>
+          <div class="idle-content-list-pic"><i>¥</i>1699.00</div>
+          <div>
+              <span>浙江省 杭州市</span>
+              <span>1小时前·千雨千寻</span>
+          </div>
+      </div>
+    </a>
+  
+      <a href="/sale-1543384-1.html" target="_blank" class="idle-content-list-1">
+      <div class="idle-content-list-img">
+          <img class="img-cover" src="http://s1.dgtle.com/dgtle_img/sale/2019/10/14/751fb201910141758218696.jpeg?imageView2/2/w/500/q/100" alt="" />
+      </div>
+      <div class="idle-content-list-bottom">
+          <p class="p-omit">iPhone 11手机壳</p>
+          <div class="idle-content-list-pic"><i>¥</i>50.00</div>
+          <div>
+              <span>河南省 郑州市</span>
+              <span>1小时前·莎士比亚的海</span>
+          </div>
+      </div>
+    </a>
+  
+      <a href="/sale-1543383-1.html" target="_blank" class="idle-content-list-1">
+      <div class="idle-content-list-img">
+          <img class="img-cover" src="http://s1.dgtle.com/dgtle_img/sale/2019/10/14/d5bf7201910141753143250.jpeg?imageView2/2/w/500/q/100" alt="" />
+      </div>
+      <div class="idle-content-list-bottom">
+          <p class="p-omit">出两个威联通 qnap 212p3 ,650 包邮/个</p>
+          <div class="idle-content-list-pic"><i>¥</i>650.00</div>
+          <div>
+              <span>江西省 南昌市</span>
+              <span>1小时前·随风7860</span>
+          </div>
+      </div>
+    </a>
+  
+      <a href="/sale-1543382-1.html" target="_blank" class="idle-content-list-1">
+      <div class="idle-content-list-img">
+          <img class="img-cover" src="http://s1.dgtle.com/dgtle_img/sale/2019/10/14/15b05201910141732489587.jpeg?imageView2/2/w/500/q/100" alt="" />
+      </div>
+      <div class="idle-content-list-bottom">
+          <p class="p-omit">iqos multi 爽快人送全套配件。 不刀</p>
+          <div class="idle-content-list-pic"><i>¥</i>430.00</div>
+          <div>
+              <span>北京市 北京市</span>
+              <span>2小时前·yushuihen</span>
+          </div>
+      </div>
+    </a>
+  
+      <a href="/sale-1543381-1.html" target="_blank" class="idle-content-list-1">
+      <div class="idle-content-list-img">
+          <img class="img-cover" src="http://s1.dgtle.com/dgtle_img/sale/2019/10/14/497d6201910141732561579.jpeg?imageView2/2/w/500/q/100" alt="" />
+      </div>
+      <div class="idle-content-list-bottom">
+          <p class="p-omit">Sony A7M3套机头 28-70</p>
+          <div class="idle-content-list-pic"><i>¥</i>950.00</div>
+          <div>
+              <span>江苏省 南京市</span>
+              <span>2小时前·爱穿NB的小胖</span>
+          </div>
+      </div>
+    </a>
+  
+      <a href="/sale-1543380-1.html" target="_blank" class="idle-content-list-1">
+      <div class="idle-content-list-img">
+          <img class="img-cover" src="http://s1.dgtle.com/dgtle_img/sale/2019/10/14/c978c201910141727285134.jpeg?imageView2/2/w/500/q/100" alt="" />
+      </div>
+      <div class="idle-content-list-bottom">
+          <p class="p-omit">孩之宝领袖级钢索</p>
+          <div class="idle-content-list-pic"><i>¥</i>200.00</div>
+          <div>
+              <span>广西壮族自治区 桂林市</span>
+              <span>2小时前·MFF</span>
+          </div>
+      </div>
+    </a>
+  
+      <a href="/sale-1543379-1.html" target="_blank" class="idle-content-list-1">
+      <div class="idle-content-list-img">
+          <img class="img-cover" src="http://s1.dgtle.com/dgtle_img/sale/2019/10/14/f987a1cbdd0297df1efd18562e916b55.jpeg?imageView2/2/w/500/q/100" alt="" />
+      </div>
+      <div class="idle-content-list-bottom">
+          <p class="p-omit">美版有锁iphone x 64g  airpods一代</p>
+          <div class="idle-content-list-pic"><i>¥</i>2234.00</div>
+          <div>
+              <span>  </span>
+              <span>2小时前·bensen</span>
+          </div>
+      </div>
+    </a>
+  
+      <a href="/sale-1543378-1.html" target="_blank" class="idle-content-list-1">
+      <div class="idle-content-list-img">
+          <img class="img-cover" src="http://s1.dgtle.com/dgtle_img/sale/2019/10/14/6ab51201910141720076729.jpeg?imageView2/2/w/500/q/100" alt="" />
+      </div>
+      <div class="idle-content-list-bottom">
+          <p class="p-omit">64g国行官换xs max</p>
+          <div class="idle-content-list-pic"><i>¥</i>5300.00</div>
+          <div>
+              <span>广东省 佛山市</span>
+              <span>2小时前·杜马罗森</span>
+          </div>
+      </div>
+    </a>
+  
+      <a href="/sale-1543377-1.html" target="_blank" class="idle-content-list-1">
+      <div class="idle-content-list-img">
+          <img class="img-cover" src="http://s1.dgtle.com/dgtle_img/sale/2019/10/14/b0eb9201910141717062891.jpeg?imageView2/2/w/500/q/100" alt="" />
+      </div>
+      <div class="idle-content-list-bottom">
+          <p class="p-omit">p10p 高配</p>
+          <div class="idle-content-list-pic"><i>¥</i>1100.00</div>
+          <div>
+              <span>上海市 上海市</span>
+              <span>2小时前·richmond</span>
+          </div>
+      </div>
+    </a>
+  
+      <a href="/sale-1543376-1.html" target="_blank" class="idle-content-list-1">
+      <div class="idle-content-list-img">
+          <img class="img-cover" src="http://s1.dgtle.com/dgtle_img/sale/2019/10/14/50466201910141715319355.jpeg?imageView2/2/w/500/q/100" alt="" />
+      </div>
+      <div class="idle-content-list-bottom">
+          <p class="p-omit">日版2网7p128g卡贴机成色充新</p>
+          <div class="idle-content-list-pic"><i>¥</i>1450.00</div>
+          <div>
+              <span>河南省 开封市</span>
+              <span>2小时前·风一样的男人</span>
+          </div>
+      </div>
+    </a>
+  </div>
+         </div>
+       
+        <div class="icon-footer">
+            <div class="icon-more" id="idleMore">
+                <span>加载更多</span>
+            </div>            
+        </div>
+    </div>
+ <script type="text/javascript" src="/js/libs/art_template.js"></script>
+  <script id="list-tmpl" type="text/html">
+      &lt;a href="/sale-{{id}}-1.html" target="_blank" class="idle-content-list-1"&gt;
+      &lt;div class="idle-content-list-img"&gt;
+          &lt;img class="img-cover" src="{{cover}}" alt=""&gt;
+      &lt;/div&gt;
+      &lt;div class="idle-content-list-bottom"&gt;
+          &lt;p class="p-omit"&gt;{{title}}&lt;/p&gt;
+          &lt;div class="idle-content-list-pic"&gt;&lt;i&gt;¥&lt;/i&gt;{{price}}&lt;/div&gt;
+          &lt;div&gt;
+              &lt;span&gt;{{address}}&lt;/span&gt;
+              &lt;span&gt;{{relativeTime}}·{{user.username}}&lt;/span&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/a&gt;
+  </script>
+ <script>
+ var cid = 0;
+ var page = 1;
+  $(document).ready(function(){
+	  getList(0,1);
+  });
+
+  function getList(cid,page){
+	   var url = "sale/getList/"+cid+"?page="+page;
+		$.ajax({
+			url:url,
+			async:true,
+			beforeSend:function(){
+				common._loadding('.idle-content');
+			},
+			complete:function(){
+				common._loaddingClose();
+			},
+			success:function(data){
+				if(data.status=='success'){
+    				var html = "";
+    				$.each(data.data.dataList,function(i,el){
+    					html+= template('list-tmpl',el);
+    				});
+    				if(data.data.is_last_page==1){
+    					$("#idleMore").hide();
+    				}else{
+    					$("#idleMore").show();
+        			}
+        			
+    				$(".idle-content-list").append(html);
+				}
+		}});  
+  }
+
+  $(function(){
+	    //tab 切换
+	    idleIndexFun._idle_content_nav();
+	     //加载更多
+	    idleIndexFun._idle_more();
+	   
+	})
+
+	var idleIndexFun={
+	    _idle_content_nav(){ //tab 切换
+	        $('.idle-content-nav li').click(function(){
+	            $(this).addClass('active').siblings().removeClass('active')
+	            cid = $(this).attr("data_id");
+	            page = 1;
+	            $(".idle-content-list").empty();
+	            getList(cid,page);
+	        })
+	    },
+	     _idle_more(){ //加载更多
+	        var flag=true;
+	        $('#idleMore').click(function(){
+	         	page = page+1;
+	         	getList(cid,page);
+	        })
+	     }
+	}
+</script>
+<script type="text/javascript">
+	$("#add_sale").click(function(){
+		var user_id = 0;
+		if(!user_id){
+			headerFun._showLogin();
+		}else{
+			window.location.href = '/sale/add';
+		}		
+	});
+</script>
+<footer>
+	<div class="header-w"></div>
+	<div class="footer-content">
+		<div class="footer-l">
+			<div class="logo">
+            <a href="#"><span class="Dgtle-fonts icon-Dgtlex-dgtlexlogo-Dgtlelogo"></span></a>
+        </div>
+		<div class="footer-icon">
+            <a href="http://www.dgtle.com/rss/dgtle.xml"><span class="Dgtle-fonts icon-Dgtlex-dgtlexicon-rss"></span></a>
+            <div href="javascript:;" class="dropdown wechat-icon">
+                <span class="Dgtle-fonts icon-Dgtlex-dgtlexicon-wechat dropdown-toggle"></span>
+                <ul class="dropdown-menu cl">
+                    <li>
+                        <img src="http://www.dgtle.com/template/dgstyle2017/common/static/images/contact_weixin_qr.png" width="100px" height="100px" />
+                    </li>
+                    <li>
+                        <h3 class="contact_weixin_logo"><i class="Dgtle-fonts icon-Dgtlex-dgtlexicon-wechat"></i><b>DGtleStyle</b></h3>
+                        <p>每日推送精选文章</p>
+                        <p>更多福利活动等你</p>
+                    </li>
+
+                </ul>
+            </div>
+            <a href="http://weibo.com/dgtle"><span class="Dgtle-fonts icon-Dgtlex-dgtlexicon-sina-weibo"></span></a>
+        </div>
+        <div class="footer-link">
+        	<a href="javascript:;">©2010-2019DGtle.com</a>
+	<a class="CCB" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">CC BY-NC-SA 4.0</a>
+	<a href="javascript:;">粤 ICP 备 13000416 号-1</a>
+
+        </div>
+		</div>
+		<ul class="footer-r">
+			<li>						
+				<p>合作伙伴</p>
+				
+                    <a href="https://www.upyun.com/" target="_blank"><span class="Dgtle-fonts icon-Dgtlex-dgtlexlogo-Collaboration-upyun"></span></a>
+                    <a href="https://www.qiniu.com/" target="_blank"><span class="Dgtle-fonts icon-Dgtlex-dgtlexlogo-Collaboration-qiniu"></span></a>
+                    <br />
+                    <a href="http://www.geetest.com/" target="_blank"><span class="Dgtle-fonts icon-Dgtlex-dgtlexlogo-Collaboration-geetest" style="top:3px;"></span></a>
+                    <a href="http://shangzhibo.tv/" target="_blank"><span class="Dgtle-fonts icon-Dgtlex-dgtlexlogo-Collaboration-shangzhibo"></span></a>
+               
+			</li>
+			<li>						
+				<p>商务合作</p>
+				<a href="/cooperation#contact">联系我们</a>
+				<a href="/cooperation">为什么选择数字尾巴？</a>
+			</li>
+			<li>						
+				<p>关于我们</p>
+				<a href="/about">关于数字尾巴</a>
+				<a href="/dgmobile">客户端下载</a>
+				<a href="/terms">软件许可及服务协议</a>
+				<a href="/community_privacy">隐私保护政策</a>
+				<a href="/community_guidelines">社区准则</a>
+			</li>
+		</ul>
+	</div>
+</footer>
+<div class="common-scroll-top">
+			<a class="TOP" href="javascript:;">
+				<i class=" Dgtle-fonts icon-Dgtlex-dgtlexicon-chevron-right-bold"></i>
+			</a>
+				<a class="EDIT" href="#f_pst" style="display: none;">
+				<i class="Dgtle-fonts icon-Dgtlex-dgtlexicon-comment"></i>
+			</a>
+</div>
+<div style="display:none"><script src="https://s11.cnzz.com/z_stat.php?id=1258616523&amp;web_id=1258616523" language="JavaScript"></script><script src="https://c.cnzz.com/core.php?web_id=1258616523&amp;t=z" charset="utf-8" type="text/javascript"></script><a href="https://www.cnzz.com/stat/website.php?web_id=1258616523" target="_blank" title="站长统计">站长统计</a></div>
+<script>
+	common._scrolltop();
+	   // 通过缩放属性适应各个宽度的平板
+	   var s=document.body.clientWidth;
+        var scale = s/1250;
+        var meta=document.getElementsByTagName('meta');
+        if(s &lt; 1250 &amp;&amp; s &gt; 700){
+            meta[1].setAttribute('content',"width=device-width, initial-scale=" + scale + ", minimum-scale=" + scale + ", maximum-scale=2.0");
+        }
+</script>
+
+
+<div class="geetest_panel geetest_wind" style="display: none;"><div class="geetest_panel_ghost"></div><div class="geetest_panel_box"><div class="geetest_other_offline geetest_panel_offline"></div><div class="geetest_panel_loading"><div class="geetest_panel_loading_icon"></div><div class="geetest_panel_loading_content">智能验证检测中</div></div><div class="geetest_panel_success"><div class="geetest_panel_success_box"><div class="geetest_panel_success_show"><div class="geetest_panel_success_pie"></div><div class="geetest_panel_success_filter"></div><div class="geetest_panel_success_mask"></div></div><div class="geetest_panel_success_correct"><div class="geetest_panel_success_icon"></div></div></div><div class="geetest_panel_success_title">通过验证</div></div><div class="geetest_panel_error"><div class="geetest_panel_error_icon"></div><div class="geetest_panel_error_title">网络超时</div><div class="geetest_panel_error_content">请点击此处重试</div><div class="geetest_panel_error_code"><div class="geetest_panel_error_code_text"></div></div></div><div class="geetest_panel_footer"><div class="geetest_panel_footer_logo"></div><div class="geetest_panel_footer_copyright">由极验提供技术支持</div></div><div class="geetest_panel_next"></div></div></div></body></html>

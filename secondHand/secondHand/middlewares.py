@@ -60,7 +60,7 @@ class SecondhandSpiderMiddleware(object):
 
 class JavaScriptMiddleware(object):
     def process_request(self, request, spider):
-        spider_using_chrome = ['nga','CHH','Right','smzdm']
+        spider_using_chrome = ['nga','dgtle','CHH','Right','smzdm']
         if spider.name in spider_using_chrome:
             options = webdriver.ChromeOptions()
             options.add_argument('headless')
@@ -73,7 +73,8 @@ class JavaScriptMiddleware(object):
 
             if spider.name == 'nga':
               return HtmlResponse(driver.current_url, body=body, encoding='utf-8', request=request)
-            
+            if spider.name == 'dgtle':
+              return HtmlResponse(driver.current_url, body=body, encoding='utf-8', request=request)
             if spider.name == 'smzdm':
               return HtmlResponse(driver.current_url, body=body, encoding='utf-8', request=request)
 
