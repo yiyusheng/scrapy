@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import scrapy
+import scrapy,cfscrape
 from datetime import datetime,timedelta
 from scrapy.spiders import CrawlSpider
 from secondHand.items import SecondhandItem
@@ -11,6 +11,8 @@ class v2exSpider(CrawlSpider):
     def start_requests(self):
         urls = ['https://www.v2ex.com/?tab=deals']
         for url in urls:
+            #token, agent = cfscrape.get_tokens(url, 'Your prefarable user agent, _optional_')
+            #yield scrapy.Request(url=url,cookies=token, headers={'User-Agent': agent}, callback=self.parse)
             yield scrapy.Request(url=url, callback=self.parse)
 
 
